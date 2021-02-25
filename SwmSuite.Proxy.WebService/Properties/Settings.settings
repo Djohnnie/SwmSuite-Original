@@ -1,0 +1,45 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SwmSuite.Proxy.WebService.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SwmSuite_Proxy_WebService_AlertService_AlertService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/SWMSuite.Facade.WebService/AlertService.asmx</Value>
+    </Setting>
+    <Setting Name="SwmSuite_Proxy_WebService_CountryService_CountryService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/SWMSuite.Facade.WebService/CountryService.asmx</Value>
+    </Setting>
+    <Setting Name="SwmSuite_Proxy_WebService_ZipCodeService_ZipCodeService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/SWMSuite.Facade.WebService/ZipCodeService.asmx</Value>
+    </Setting>
+    <Setting Name="SwmSuite_Proxy_WebService_EmployeeService_EmployeeService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/SWMSuite.Facade.WebService/EmployeeService.asmx</Value>
+    </Setting>
+    <Setting Name="SwmSuite_Proxy_WebService_AvatarService_AvatarService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/SWMSuite.Facade.WebService/AvatarService.asmx</Value>
+    </Setting>
+    <Setting Name="SwmSuite_Proxy_WebService_UserService_UserService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/SWMSuite.Facade.WebService/UserService.asmx</Value>
+    </Setting>
+    <Setting Name="SwmSuite_Proxy_WebService_MessageService_MessageService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/SWMSuite.Facade.WebService/MessageService.asmx</Value>
+    </Setting>
+    <Setting Name="SwmSuite_Proxy_WebService_AgendaService_AgendaService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/SWMSuite.Facade.WebService/AgendaService.asmx</Value>
+    </Setting>
+    <Setting Name="SwmSuite_Proxy_WebService_TimeTableService_TimeTableService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/SWMSuite.Facade.WebService/TimeTableService.asmx</Value>
+    </Setting>
+    <Setting Name="SwmSuite_Proxy_WebService_TaskService_TaskService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/SWMSuite.Facade.WebService/TaskService.asmx</Value>
+    </Setting>
+    <Setting Name="SwmSuite_Proxy_WebService_LoggingService_LoggingService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/SWMSuite.Facade.WebService/LoggingService.asmx</Value>
+    </Setting>
+    <Setting Name="SwmSuite_Proxy_WebService_ConnectionTestService_ConnectionTestService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/SWMSuite.Facade.WebService/ConnectionTestService.asmx</Value>
+    </Setting>
+    <Setting Name="SwmSuite_Proxy_WebService_HolidayService_HolidayService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/SWMSuite.Facade.WebService/HolidayService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{20C05977-6C56-410E-9B52-A76DA397DDB8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SwmSuiteZipCodeManagement</RootNamespace>
+    <AssemblyName>SwmSuiteZipCodeManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CountryDetailDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CountryDetailDialog.Designer.cs">
+      <DependentUpon>CountryDetailDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportZipCode.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CountryDetailDialog.resx">
+      <DependentUpon>CountryDetailDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZipCodeDetailDialog.resx">
+      <DependentUpon>ZipCodeDetailDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ZipCodeDetailDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZipCodeDetailDialog.Designer.cs">
+      <DependentUpon>ZipCodeDetailDialog.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleWorkfloorManagementSuite\SimpleWorkfloorManagementSuite.csproj">
+      <Project>{25BC0E6D-23A3-48F8-9D76-EA4B538D6A79}</Project>
+      <Name>SimpleWorkfloorManagementSuite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SwmSuite.Framework.BusinessObjects\SwmSuite.Data.BusinessObjects.csproj">
+      <Project>{D06DC017-74A1-4B63-82BC-7019B9C6333B}</Project>
+      <Name>SwmSuite.Data.BusinessObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWMSuite.Framework\SwmSuite.Framework.csproj">
+      <Project>{948A5F7B-C897-4A4D-8B0C-EE52B026B186}</Project>
+      <Name>SwmSuite.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWMSuite.Presentation.Common\SwmSuite.Presentation.Common.csproj">
+      <Project>{86C17954-908E-4449-9F41-53102DE7812E}</Project>
+      <Name>SwmSuite.Presentation.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWMSuite.Presentation.Drawing\SwmSuite.Presentation.Drawing.csproj">
+      <Project>{670609E1-44D9-472A-AE11-E97EBECE6976}</Project>
+      <Name>SwmSuite.Presentation.Drawing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWMSuite.Proxy.Interface\SwmSuite.Proxy.Interface.csproj">
+      <Project>{F570BBB9-CFFD-49E0-80E2-3031C8D7F10F}</Project>
+      <Name>SwmSuite.Proxy.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

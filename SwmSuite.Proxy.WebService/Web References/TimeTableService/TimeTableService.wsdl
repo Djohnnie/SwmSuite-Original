@@ -1,0 +1,1030 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="SimpleWorkfloorManagementSuiteNameSpace" xmlns:s1="SwmSuite_v1" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s2="http://microsoft.com/wsdl/types/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="SimpleWorkfloorManagementSuiteNameSpace" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="SimpleWorkfloorManagementSuiteNameSpace">
+      <s:import namespace="SwmSuite_v1" />
+      <s:element name="GetTimeTablePurposesForEmployeeGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employeeGroup" type="s1:EmployeeGroup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTimeTablePurposesForEmployeeGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTimeTablePurposesForEmployeeGroupResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="TimeTablePurpose" nillable="true" type="s1:TimeTablePurpose" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SwmSuiteSoapHeader" type="tns:SwmSuiteSoapHeader" />
+      <s:complexType name="SwmSuiteSoapHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Employee" type="s:int" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="CreateTimeTablePurpose">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="timeTablePurpose" type="s1:TimeTablePurpose" />
+            <s:element minOccurs="0" maxOccurs="1" name="employeeGroup" type="s1:EmployeeGroup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateTimeTablePurposeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateTimeTablePurposeResult" type="s1:TimeTablePurpose" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTimeTablePurpose">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="timeTablePurpose" type="s1:TimeTablePurpose" />
+            <s:element minOccurs="0" maxOccurs="1" name="employeeGroup" type="s1:EmployeeGroup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTimeTablePurposeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateTimeTablePurposeResult" type="s1:TimeTablePurpose" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveTimeTablePurposes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="timeTablePurposes">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="TimeTablePurpose" nillable="true" type="s1:TimeTablePurpose" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveTimeTablePurposesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTimeTableEntries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employee" type="s1:Employee" />
+            <s:element minOccurs="1" maxOccurs="1" name="begin" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="end" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTimeTableEntriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTimeTableEntriesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="TimeTableEntry" nillable="true" type="s1:TimeTableEntry" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateTimeTableEntry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="timeTableEntry" type="s1:TimeTableEntry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateTimeTableEntryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateTimeTableEntryResult" type="s1:TimeTableEntry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTimeTableEntry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="timeTableEntry" type="s1:TimeTableEntry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTimeTableEntryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateTimeTableEntryResult" type="s1:TimeTableEntry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveTimeTableEntries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="timeTableEntries">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="TimeTableEntry" nillable="true" type="s1:TimeTableEntry" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveTimeTableEntriesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTimeTableTemplate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="timeTableTemplateSysId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTimeTableTemplateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTimeTableTemplateResult" type="s1:TimeTableTemplate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTimeTableTemplatesForEmployeeGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employeeGroup" type="s1:EmployeeGroup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTimeTableTemplatesForEmployeeGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTimeTableTemplatesForEmployeeGroupResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="TimeTableTemplate" nillable="true" type="s1:TimeTableTemplate" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateTimeTableTemplate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="timeTableTemplate" type="s1:TimeTableTemplate" />
+            <s:element minOccurs="0" maxOccurs="1" name="employeeGroup" type="s1:EmployeeGroup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateTimeTableTemplateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateTimeTableTemplateResult" type="s1:TimeTableTemplate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTimeTableTemplate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="timeTableTemplate" type="s1:TimeTableTemplate" />
+            <s:element minOccurs="0" maxOccurs="1" name="employeeGroup" type="s1:EmployeeGroup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTimeTableTemplateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateTimeTableTemplateResult" type="s1:TimeTableTemplate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveTimeTableTemplates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="timeTableTemplates">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="TimeTableTemplate" nillable="true" type="s1:TimeTableTemplate" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveTimeTableTemplatesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTimeTableTemplateEntries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="timeTableTemplate" type="s1:TimeTableTemplate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTimeTableTemplateEntriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTimeTableTemplateEntriesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="TimeTableTemplateEntry" nillable="true" type="s1:TimeTableTemplateEntry" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateTimeTableTemplateEntry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="timeTableTemplateEntry" type="s1:TimeTableTemplateEntry" />
+            <s:element minOccurs="0" maxOccurs="1" name="timeTableTemplate" type="s1:TimeTableTemplate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateTimeTableTemplateEntryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateTimeTableTemplateEntryResult" type="s1:TimeTableTemplateEntry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTimeTableTemplateEntry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="timeTableTemplateEntry" type="s1:TimeTableTemplateEntry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTimeTableTemplateEntryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateTimeTableTemplateEntryResult" type="s1:TimeTableTemplateEntry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveTimeTableTemplateEntries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="timeTableTemplateEntries">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="TimeTableTemplateEntry" nillable="true" type="s1:TimeTableTemplateEntry" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveTimeTableTemplateEntriesResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="SwmSuite_v1">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:complexType name="EmployeeGroup">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Employees">
+                <s:complexType>
+                  <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="unbounded" name="Employee" nillable="true" type="s1:Employee" />
+                  </s:sequence>
+                </s:complexType>
+              </s:element>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BusinessObjectBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SysId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowVersion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValidationErrors" type="s1:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TimeTablePurpose">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="LegendaColor1" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="LegendaColor2" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="LegendaColor3" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="EmployeeSettings">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="AutoLogon" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="AutoLogonHost" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="LogoutTimeout" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="EmailNotification" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SmtpServer" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="SmtpPort" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="SecureConnection" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="Authentication" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Avatar">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Picture" type="s:base64Binary" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ZipCode">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Employee">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="UserSysId" type="s2:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s1:ZipCode" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrivatePhoneNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="WorkPhoneNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CellPhoneNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress3" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress4" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress5" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Avatar" type="s1:Avatar" />
+              <s:element minOccurs="0" maxOccurs="1" name="Settings" type="s1:EmployeeSettings" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Administrator" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="TimeTableEntry">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="Employee" type="s1:Employee" />
+              <s:element minOccurs="1" maxOccurs="1" name="From" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="To" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="TimeTablePurpose" type="s1:TimeTablePurpose" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="TimeTableTemplate">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmployeeGroup" type="s1:EmployeeGroup" />
+              <s:element minOccurs="0" maxOccurs="1" name="TimeTableTemplateEntries">
+                <s:complexType>
+                  <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="unbounded" name="TimeTableTemplateEntry" nillable="true" type="s1:TimeTableTemplateEntry" />
+                  </s:sequence>
+                </s:complexType>
+              </s:element>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="TimeTableTemplateEntry">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="From" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="To" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="TimeTablePurpose" type="s1:TimeTablePurpose" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetTimeTablePurposesForEmployeeGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTimeTablePurposesForEmployeeGroup" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeTablePurposesForEmployeeGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTimeTablePurposesForEmployeeGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeTablePurposesForEmployeeGroupSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreateTimeTablePurposeSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateTimeTablePurpose" />
+  </wsdl:message>
+  <wsdl:message name="CreateTimeTablePurposeSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateTimeTablePurposeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateTimeTablePurposeSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTimeTablePurposeSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTimeTablePurpose" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTimeTablePurposeSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTimeTablePurposeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTimeTablePurposeSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="RemoveTimeTablePurposesSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveTimeTablePurposes" />
+  </wsdl:message>
+  <wsdl:message name="RemoveTimeTablePurposesSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveTimeTablePurposesResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveTimeTablePurposesSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeTableEntriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTimeTableEntries" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeTableEntriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTimeTableEntriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeTableEntriesSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreateTimeTableEntrySoapIn">
+    <wsdl:part name="parameters" element="tns:CreateTimeTableEntry" />
+  </wsdl:message>
+  <wsdl:message name="CreateTimeTableEntrySoapOut">
+    <wsdl:part name="parameters" element="tns:CreateTimeTableEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateTimeTableEntrySwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTimeTableEntrySoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTimeTableEntry" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTimeTableEntrySoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTimeTableEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTimeTableEntrySwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="RemoveTimeTableEntriesSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveTimeTableEntries" />
+  </wsdl:message>
+  <wsdl:message name="RemoveTimeTableEntriesSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveTimeTableEntriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveTimeTableEntriesSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeTableTemplateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTimeTableTemplate" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeTableTemplateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTimeTableTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeTableTemplateSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeTableTemplatesForEmployeeGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTimeTableTemplatesForEmployeeGroup" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeTableTemplatesForEmployeeGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTimeTableTemplatesForEmployeeGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeTableTemplatesForEmployeeGroupSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreateTimeTableTemplateSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateTimeTableTemplate" />
+  </wsdl:message>
+  <wsdl:message name="CreateTimeTableTemplateSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateTimeTableTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateTimeTableTemplateSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTimeTableTemplateSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTimeTableTemplate" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTimeTableTemplateSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTimeTableTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTimeTableTemplateSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="RemoveTimeTableTemplatesSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveTimeTableTemplates" />
+  </wsdl:message>
+  <wsdl:message name="RemoveTimeTableTemplatesSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveTimeTableTemplatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveTimeTableTemplatesSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeTableTemplateEntriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTimeTableTemplateEntries" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeTableTemplateEntriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTimeTableTemplateEntriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeTableTemplateEntriesSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreateTimeTableTemplateEntrySoapIn">
+    <wsdl:part name="parameters" element="tns:CreateTimeTableTemplateEntry" />
+  </wsdl:message>
+  <wsdl:message name="CreateTimeTableTemplateEntrySoapOut">
+    <wsdl:part name="parameters" element="tns:CreateTimeTableTemplateEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateTimeTableTemplateEntrySwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTimeTableTemplateEntrySoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTimeTableTemplateEntry" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTimeTableTemplateEntrySoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTimeTableTemplateEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTimeTableTemplateEntrySwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="RemoveTimeTableTemplateEntriesSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveTimeTableTemplateEntries" />
+  </wsdl:message>
+  <wsdl:message name="RemoveTimeTableTemplateEntriesSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveTimeTableTemplateEntriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveTimeTableTemplateEntriesSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:portType name="TimeTableServiceSoap">
+    <wsdl:operation name="GetTimeTablePurposesForEmployeeGroup">
+      <wsdl:input message="tns:GetTimeTablePurposesForEmployeeGroupSoapIn" />
+      <wsdl:output message="tns:GetTimeTablePurposesForEmployeeGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTimeTablePurpose">
+      <wsdl:input message="tns:CreateTimeTablePurposeSoapIn" />
+      <wsdl:output message="tns:CreateTimeTablePurposeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTimeTablePurpose">
+      <wsdl:input message="tns:UpdateTimeTablePurposeSoapIn" />
+      <wsdl:output message="tns:UpdateTimeTablePurposeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTimeTablePurposes">
+      <wsdl:input message="tns:RemoveTimeTablePurposesSoapIn" />
+      <wsdl:output message="tns:RemoveTimeTablePurposesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeTableEntries">
+      <wsdl:input message="tns:GetTimeTableEntriesSoapIn" />
+      <wsdl:output message="tns:GetTimeTableEntriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTimeTableEntry">
+      <wsdl:input message="tns:CreateTimeTableEntrySoapIn" />
+      <wsdl:output message="tns:CreateTimeTableEntrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTimeTableEntry">
+      <wsdl:input message="tns:UpdateTimeTableEntrySoapIn" />
+      <wsdl:output message="tns:UpdateTimeTableEntrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTimeTableEntries">
+      <wsdl:input message="tns:RemoveTimeTableEntriesSoapIn" />
+      <wsdl:output message="tns:RemoveTimeTableEntriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeTableTemplate">
+      <wsdl:input message="tns:GetTimeTableTemplateSoapIn" />
+      <wsdl:output message="tns:GetTimeTableTemplateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeTableTemplatesForEmployeeGroup">
+      <wsdl:input message="tns:GetTimeTableTemplatesForEmployeeGroupSoapIn" />
+      <wsdl:output message="tns:GetTimeTableTemplatesForEmployeeGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTimeTableTemplate">
+      <wsdl:input message="tns:CreateTimeTableTemplateSoapIn" />
+      <wsdl:output message="tns:CreateTimeTableTemplateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTimeTableTemplate">
+      <wsdl:input message="tns:UpdateTimeTableTemplateSoapIn" />
+      <wsdl:output message="tns:UpdateTimeTableTemplateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTimeTableTemplates">
+      <wsdl:input message="tns:RemoveTimeTableTemplatesSoapIn" />
+      <wsdl:output message="tns:RemoveTimeTableTemplatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeTableTemplateEntries">
+      <wsdl:input message="tns:GetTimeTableTemplateEntriesSoapIn" />
+      <wsdl:output message="tns:GetTimeTableTemplateEntriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTimeTableTemplateEntry">
+      <wsdl:input message="tns:CreateTimeTableTemplateEntrySoapIn" />
+      <wsdl:output message="tns:CreateTimeTableTemplateEntrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTimeTableTemplateEntry">
+      <wsdl:input message="tns:UpdateTimeTableTemplateEntrySoapIn" />
+      <wsdl:output message="tns:UpdateTimeTableTemplateEntrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTimeTableTemplateEntries">
+      <wsdl:input message="tns:RemoveTimeTableTemplateEntriesSoapIn" />
+      <wsdl:output message="tns:RemoveTimeTableTemplateEntriesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TimeTableServiceSoap" type="tns:TimeTableServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTimeTablePurposesForEmployeeGroup">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetTimeTablePurposesForEmployeeGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTimeTablePurposesForEmployeeGroupSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTimeTablePurpose">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CreateTimeTablePurpose" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateTimeTablePurposeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTimeTablePurpose">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateTimeTablePurpose" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateTimeTablePurposeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTimeTablePurposes">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/RemoveTimeTablePurposes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RemoveTimeTablePurposesSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeTableEntries">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetTimeTableEntries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTimeTableEntriesSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTimeTableEntry">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CreateTimeTableEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateTimeTableEntrySwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTimeTableEntry">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateTimeTableEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateTimeTableEntrySwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTimeTableEntries">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/RemoveTimeTableEntries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RemoveTimeTableEntriesSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeTableTemplate">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetTimeTableTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTimeTableTemplateSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeTableTemplatesForEmployeeGroup">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetTimeTableTemplatesForEmployeeGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTimeTableTemplatesForEmployeeGroupSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTimeTableTemplate">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CreateTimeTableTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateTimeTableTemplateSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTimeTableTemplate">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateTimeTableTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateTimeTableTemplateSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTimeTableTemplates">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/RemoveTimeTableTemplates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RemoveTimeTableTemplatesSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeTableTemplateEntries">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetTimeTableTemplateEntries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTimeTableTemplateEntriesSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTimeTableTemplateEntry">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CreateTimeTableTemplateEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateTimeTableTemplateEntrySwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTimeTableTemplateEntry">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateTimeTableTemplateEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateTimeTableTemplateEntrySwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTimeTableTemplateEntries">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/RemoveTimeTableTemplateEntries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RemoveTimeTableTemplateEntriesSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TimeTableServiceSoap12" type="tns:TimeTableServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTimeTablePurposesForEmployeeGroup">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetTimeTablePurposesForEmployeeGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTimeTablePurposesForEmployeeGroupSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTimeTablePurpose">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CreateTimeTablePurpose" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateTimeTablePurposeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTimeTablePurpose">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateTimeTablePurpose" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateTimeTablePurposeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTimeTablePurposes">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/RemoveTimeTablePurposes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RemoveTimeTablePurposesSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeTableEntries">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetTimeTableEntries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTimeTableEntriesSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTimeTableEntry">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CreateTimeTableEntry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateTimeTableEntrySwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTimeTableEntry">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateTimeTableEntry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateTimeTableEntrySwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTimeTableEntries">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/RemoveTimeTableEntries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RemoveTimeTableEntriesSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeTableTemplate">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetTimeTableTemplate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTimeTableTemplateSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeTableTemplatesForEmployeeGroup">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetTimeTableTemplatesForEmployeeGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTimeTableTemplatesForEmployeeGroupSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTimeTableTemplate">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CreateTimeTableTemplate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateTimeTableTemplateSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTimeTableTemplate">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateTimeTableTemplate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateTimeTableTemplateSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTimeTableTemplates">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/RemoveTimeTableTemplates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RemoveTimeTableTemplatesSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeTableTemplateEntries">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetTimeTableTemplateEntries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTimeTableTemplateEntriesSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTimeTableTemplateEntry">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CreateTimeTableTemplateEntry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateTimeTableTemplateEntrySwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTimeTableTemplateEntry">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateTimeTableTemplateEntry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateTimeTableTemplateEntrySwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTimeTableTemplateEntries">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/RemoveTimeTableTemplateEntries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RemoveTimeTableTemplateEntriesSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TimeTableService">
+    <wsdl:port name="TimeTableServiceSoap" binding="tns:TimeTableServiceSoap">
+      <soap:address location="http://localhost/SWMSuite.Facade.WebService/TimeTableService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TimeTableServiceSoap12" binding="tns:TimeTableServiceSoap12">
+      <soap12:address location="http://localhost/SWMSuite.Facade.WebService/TimeTableService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

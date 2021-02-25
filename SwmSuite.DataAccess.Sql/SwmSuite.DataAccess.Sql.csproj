@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4B1B3B2E-5972-4A6E-814B-6E043348C2A1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SwmSuite.DataAccess.Sql</RootNamespace>
+    <AssemblyName>SwmSuite.DataAccess.Sql</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <OutputType>Library</OutputType>
+    <AssemblyName>SwmSuite.DataAccess.Sql</AssemblyName>
+    <RootNamespace>SwmSuite.DataAccess.Sql</RootNamespace>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <DocumentationFile>..\bin\Debug\SwmSuite.DataAccess.Sql.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <OutputType>Library</OutputType>
+    <AssemblyName>SwmSuite.DataAccess.Sql</AssemblyName>
+    <DebugSymbols>true</DebugSymbols>
+    <RootNamespace>SwmSuite.DataAccess.Sql</RootNamespace>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgendaDal.cs" />
+    <Compile Include="AppointmentGuestDal.cs" />
+    <Compile Include="AppointmentDal.cs" />
+    <Compile Include="AppointmentRecurrenceDal.cs" />
+    <Compile Include="AlertDal.cs" />
+    <Compile Include="ConnectionLogDal.cs" />
+    <Compile Include="ConnectionTestDal.cs" />
+    <Compile Include="CountryDal.cs" />
+    <Compile Include="EmployeeAlertDal.cs" />
+    <Compile Include="EmployeeDal.cs" />
+    <Compile Include="EmployeeGroupAlertDal.cs" />
+    <Compile Include="EmployeeGroupDal.cs" />
+    <Compile Include="AvatarDal.cs" />
+    <Compile Include="EmployeeSettingsDal.cs" />
+    <Compile Include="HolidayDefinitionDal.cs" />
+    <Compile Include="LoginLogDal.cs" />
+    <Compile Include="OvertimeEntryDal.cs" />
+    <Compile Include="RecurrenceDal.cs" />
+    <Compile Include="SqlHelper\ConnectionLogSqlHelper.cs" />
+    <Compile Include="SqlHelper\EmployeeSettingsSqlHelper.cs" />
+    <Compile Include="SqlHelper\HolidayDefinitionSqlHelper.cs" />
+    <Compile Include="SqlHelper\LoginLogSqlHelper.cs" />
+    <Compile Include="SqlHelper\OvertimeEntrySqlHelper.cs" />
+    <Compile Include="SqlHelper\TimeTableAdjustmentSqlHelper.cs" />
+    <Compile Include="SqlHelper\TimeTableEntrySqlHelper.cs" />
+    <Compile Include="SqlHelper\TimeTablePurposeSqlHelper.cs" />
+    <Compile Include="SqlHelper\TimeTableTemplateEntrySqlHelper.cs" />
+    <Compile Include="SqlHelper\TimeTableTemplateSqlHelper.cs" />
+    <Compile Include="TimeTableEntryDal.cs" />
+    <Compile Include="TimeTablePurposeDal.cs" />
+    <Compile Include="TimeTableTemplateDal.cs" />
+    <Compile Include="TimeTableTemplateEntryDal.cs" />
+    <Compile Include="ZipCodeDal.cs" />
+    <Compile Include="MessageDal.cs" />
+    <Compile Include="MessageFolderDal.cs" />
+    <Compile Include="MessageRecipientDal.cs" />
+    <Compile Include="MessageStorageDal.cs" />
+    <Compile Include="DalFactory.cs" />
+    <Compile Include="DalUtil.cs" />
+    <Compile Include="LogDeleteDal.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlHelper\AgendaSqlHelper.cs" />
+    <Compile Include="SqlHelper\AppointmentGuestSqlHelper.cs" />
+    <Compile Include="SqlHelper\AppointmentRecurrenceSqlHelper.cs" />
+    <Compile Include="SqlHelper\AppointmentSqlHelper.cs" />
+    <Compile Include="SqlHelper\AlertSqlHelper.cs" />
+    <Compile Include="SqlHelper\ConnectionTestSqlHelper.cs" />
+    <Compile Include="SqlHelper\CountrySqlHelper.cs" />
+    <Compile Include="SqlHelper\EmployeeAlertSqlHelper.cs" />
+    <Compile Include="SqlHelper\EmployeeGroupAlertSqlHelper.cs" />
+    <Compile Include="SqlHelper\EmployeeGroupSqlHelper.cs" />
+    <Compile Include="SqlHelper\EmployeeSqlHelper.cs" />
+    <Compile Include="SqlHelper\AvatarSqlHelper.cs" />
+    <Compile Include="SqlHelper\RecurrenceSqlHelper.cs" />
+    <Compile Include="SqlHelper\ZipCodeSqlHelper.cs" />
+    <Compile Include="SqlHelper\MessageFolderSqlHelper.cs" />
+    <Compile Include="SqlHelper\MessageRecipientSqlHelper.cs" />
+    <Compile Include="SqlHelper\MessageSqlHelper.cs" />
+    <Compile Include="SqlHelper\MessageStorageSqlHelper.cs" />
+    <Compile Include="SqlHelper\ObjectBaseSqlHelper.cs" />
+    <Compile Include="SqlHelper\TaskDescriptionSqlHelper.cs" />
+    <Compile Include="SqlHelper\TaskRecurrenceSqlHelper.cs" />
+    <Compile Include="SqlHelper\TaskRunSqlHelper.cs" />
+    <Compile Include="SqlHelper\TaskSqlHelper.cs" />
+    <Compile Include="TaskDal.cs" />
+    <Compile Include="TaskDescriptionDal.cs" />
+    <Compile Include="TaskRecurrenceDal.cs" />
+    <Compile Include="TaskRunDal.cs" />
+    <Compile Include="UserDal.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SWMSuite.Configuration\SwmSuite.Configuration.csproj">
+      <Project>{B64A0274-E9BC-42DF-B5B9-6907CAB2ADB9}</Project>
+      <Name>SwmSuite.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SwmSuite.Data.Common\SwmSuite.Data.Common.csproj">
+      <Project>{E35CC450-D0C1-45C5-9BB0-2D1BE871CD98}</Project>
+      <Name>SwmSuite.Data.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWMSuite.DataAccess.Interface\SwmSuite.DataAccess.Interface.csproj">
+      <Project>{CBF925E3-63A1-4383-8F60-58796D9F7C31}</Project>
+      <Name>SwmSuite.DataAccess.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SwmSuite.Framework.DataObjects\SwmSuite.Data.DataObjects.csproj">
+      <Project>{638BF0C2-5CD7-462B-AE9E-DEFAC3D18BCF}</Project>
+      <Name>SwmSuite.Data.DataObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWMSuite.Framework\SwmSuite.Framework.csproj">
+      <Project>{948A5F7B-C897-4A4D-8B0C-EE52B026B186}</Project>
+      <Name>SwmSuite.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

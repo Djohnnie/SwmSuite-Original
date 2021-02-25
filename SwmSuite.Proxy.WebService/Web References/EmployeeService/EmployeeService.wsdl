@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="SimpleWorkfloorManagementSuiteNameSpace" xmlns:s1="SwmSuite_v1" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s2="http://microsoft.com/wsdl/types/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="SimpleWorkfloorManagementSuiteNameSpace" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="SimpleWorkfloorManagementSuiteNameSpace">
+      <s:import namespace="SwmSuite_v1" />
+      <s:element name="GetEmployeeGroups">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetEmployeeGroupsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeeGroupsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="EmployeeGroup" nillable="true" type="s1:EmployeeGroup" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SwmSuiteSoapHeader" type="tns:SwmSuiteSoapHeader" />
+      <s:complexType name="SwmSuiteSoapHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Employee" type="s:int" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetEmployeeGroupDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sysId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeGroupDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeeGroupDetailResult" type="s1:EmployeeGroup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateEmployeeGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employeeGroup" type="s1:EmployeeGroup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateEmployeeGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateEmployeeGroupResult" type="s1:EmployeeGroup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEmployeeGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employeeGroup" type="s1:EmployeeGroup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEmployeeGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateEmployeeGroupResult" type="s1:EmployeeGroup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveEmployeeGroups">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employeeGroups">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="EmployeeGroup" nillable="true" type="s1:EmployeeGroup" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveEmployeeGroupsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetEmployeeGroupForEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employee" type="s1:Employee" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeGroupForEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeeGroupForEmployeeResult" type="s1:EmployeeGroup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployees">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetEmployeesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="Employee" nillable="true" type="s1:Employee" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeesForEmployeeGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employeeGroup" type="s1:EmployeeGroup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeesForEmployeeGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeesForEmployeeGroupResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="Employee" nillable="true" type="s1:Employee" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sysId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeeDetailResult" type="s1:Employee" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employee" type="s1:Employee" />
+            <s:element minOccurs="0" maxOccurs="1" name="employeeGroup" type="s1:EmployeeGroup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateEmployeeResult" type="s1:Employee" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employee" type="s1:Employee" />
+            <s:element minOccurs="0" maxOccurs="1" name="employeeGroup" type="s1:EmployeeGroup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateEmployeeResult" type="s1:Employee" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveEmployees">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employees">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="Employee" nillable="true" type="s1:Employee" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveEmployeesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ChangePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChangePasswordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDefaultEmployeeForMachineName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="machineName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDefaultEmployeeForMachineNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDefaultEmployeeForMachineNameResult" type="s1:Employee" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeSettings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sysId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeSettingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeeSettingsResult" type="s1:EmployeeSettings" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeSettingsForEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employee" type="s1:Employee" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeSettingsForEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeeSettingsForEmployeeResult" type="s1:EmployeeSettings" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetEmployeeSettingsForEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employeeSettings" type="s1:EmployeeSettings" />
+            <s:element minOccurs="0" maxOccurs="1" name="employee" type="s1:Employee" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetEmployeeSettingsForEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetEmployeeSettingsForEmployeeResult" type="s1:EmployeeSettings" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="SwmSuite_v1">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:complexType name="EmployeeGroup">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Employees">
+                <s:complexType>
+                  <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="unbounded" name="Employee" nillable="true" type="s1:Employee" />
+                  </s:sequence>
+                </s:complexType>
+              </s:element>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BusinessObjectBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SysId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowVersion" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EmployeeSettings">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="AutoLogon" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="AutoLogonHost" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="LogoutTimeout" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="EmailNotification" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SmtpServer" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="SmtpPort" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="SecureConnection" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="Authentication" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Avatar">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Picture" type="s:base64Binary" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ZipCode">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Employee">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="UserSysId" type="s2:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s1:ZipCode" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrivatePhoneNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="WorkPhoneNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CellPhoneNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress3" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress4" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress5" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Avatar" type="s1:Avatar" />
+              <s:element minOccurs="0" maxOccurs="1" name="Settings" type="s1:EmployeeSettings" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Administrator" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetEmployeeGroupsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeeGroups" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeGroupsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeeGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeGroupsSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeGroupDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeeGroupDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeGroupDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeeGroupDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeGroupDetailSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreateEmployeeGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateEmployeeGroup" />
+  </wsdl:message>
+  <wsdl:message name="CreateEmployeeGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateEmployeeGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateEmployeeGroupSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmployeeGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEmployeeGroup" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmployeeGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEmployeeGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmployeeGroupSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="RemoveEmployeeGroupsSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveEmployeeGroups" />
+  </wsdl:message>
+  <wsdl:message name="RemoveEmployeeGroupsSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveEmployeeGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveEmployeeGroupsSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeGroupForEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeeGroupForEmployee" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeGroupForEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeeGroupForEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeGroupForEmployeeSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployees" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeesSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeesForEmployeeGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeesForEmployeeGroup" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeesForEmployeeGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeesForEmployeeGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeesForEmployeeGroupSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeeDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeeDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeDetailSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreateEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateEmployee" />
+  </wsdl:message>
+  <wsdl:message name="CreateEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateEmployeeSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEmployee" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmployeeSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="RemoveEmployeesSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveEmployees" />
+  </wsdl:message>
+  <wsdl:message name="RemoveEmployeesSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveEmployeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveEmployeesSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultEmployeeForMachineNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDefaultEmployeeForMachineName" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultEmployeeForMachineNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDefaultEmployeeForMachineNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultEmployeeForMachineNameSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeSettingsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeeSettings" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeSettingsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeeSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeSettingsSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeSettingsForEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeeSettingsForEmployee" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeSettingsForEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeeSettingsForEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeSettingsForEmployeeSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="SetEmployeeSettingsForEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:SetEmployeeSettingsForEmployee" />
+  </wsdl:message>
+  <wsdl:message name="SetEmployeeSettingsForEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:SetEmployeeSettingsForEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetEmployeeSettingsForEmployeeSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:portType name="EmployeeServiceSoap">
+    <wsdl:operation name="GetEmployeeGroups">
+      <wsdl:input message="tns:GetEmployeeGroupsSoapIn" />
+      <wsdl:output message="tns:GetEmployeeGroupsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeGroupDetail">
+      <wsdl:input message="tns:GetEmployeeGroupDetailSoapIn" />
+      <wsdl:output message="tns:GetEmployeeGroupDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateEmployeeGroup">
+      <wsdl:input message="tns:CreateEmployeeGroupSoapIn" />
+      <wsdl:output message="tns:CreateEmployeeGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployeeGroup">
+      <wsdl:input message="tns:UpdateEmployeeGroupSoapIn" />
+      <wsdl:output message="tns:UpdateEmployeeGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEmployeeGroups">
+      <wsdl:input message="tns:RemoveEmployeeGroupsSoapIn" />
+      <wsdl:output message="tns:RemoveEmployeeGroupsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeGroupForEmployee">
+      <wsdl:input message="tns:GetEmployeeGroupForEmployeeSoapIn" />
+      <wsdl:output message="tns:GetEmployeeGroupForEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployees">
+      <wsdl:input message="tns:GetEmployeesSoapIn" />
+      <wsdl:output message="tns:GetEmployeesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeesForEmployeeGroup">
+      <wsdl:input message="tns:GetEmployeesForEmployeeGroupSoapIn" />
+      <wsdl:output message="tns:GetEmployeesForEmployeeGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeDetail">
+      <wsdl:input message="tns:GetEmployeeDetailSoapIn" />
+      <wsdl:output message="tns:GetEmployeeDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateEmployee">
+      <wsdl:input message="tns:CreateEmployeeSoapIn" />
+      <wsdl:output message="tns:CreateEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployee">
+      <wsdl:input message="tns:UpdateEmployeeSoapIn" />
+      <wsdl:output message="tns:UpdateEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEmployees">
+      <wsdl:input message="tns:RemoveEmployeesSoapIn" />
+      <wsdl:output message="tns:RemoveEmployeesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input message="tns:ChangePasswordSoapIn" />
+      <wsdl:output message="tns:ChangePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultEmployeeForMachineName">
+      <wsdl:input message="tns:GetDefaultEmployeeForMachineNameSoapIn" />
+      <wsdl:output message="tns:GetDefaultEmployeeForMachineNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeSettings">
+      <wsdl:input message="tns:GetEmployeeSettingsSoapIn" />
+      <wsdl:output message="tns:GetEmployeeSettingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeSettingsForEmployee">
+      <wsdl:input message="tns:GetEmployeeSettingsForEmployeeSoapIn" />
+      <wsdl:output message="tns:GetEmployeeSettingsForEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetEmployeeSettingsForEmployee">
+      <wsdl:input message="tns:SetEmployeeSettingsForEmployeeSoapIn" />
+      <wsdl:output message="tns:SetEmployeeSettingsForEmployeeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EmployeeServiceSoap" type="tns:EmployeeServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetEmployeeGroups">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetEmployeeGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetEmployeeGroupsSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeGroupDetail">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetEmployeeGroupDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetEmployeeGroupDetailSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateEmployeeGroup">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CreateEmployeeGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateEmployeeGroupSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployeeGroup">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateEmployeeGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateEmployeeGroupSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEmployeeGroups">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/RemoveEmployeeGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RemoveEmployeeGroupsSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeGroupForEmployee">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetEmployeeGroupForEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetEmployeeGroupForEmployeeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployees">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetEmployees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetEmployeesSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeesForEmployeeGroup">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetEmployeesForEmployeeGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetEmployeesForEmployeeGroupSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeDetail">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetEmployeeDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetEmployeeDetailSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateEmployee">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CreateEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateEmployeeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployee">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateEmployeeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEmployees">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/RemoveEmployees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RemoveEmployeesSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ChangePasswordSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultEmployeeForMachineName">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetDefaultEmployeeForMachineName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDefaultEmployeeForMachineNameSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeSettings">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetEmployeeSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetEmployeeSettingsSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeSettingsForEmployee">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetEmployeeSettingsForEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetEmployeeSettingsForEmployeeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetEmployeeSettingsForEmployee">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/SetEmployeeSettingsForEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SetEmployeeSettingsForEmployeeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EmployeeServiceSoap12" type="tns:EmployeeServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetEmployeeGroups">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetEmployeeGroups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetEmployeeGroupsSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeGroupDetail">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetEmployeeGroupDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetEmployeeGroupDetailSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateEmployeeGroup">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CreateEmployeeGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateEmployeeGroupSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployeeGroup">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateEmployeeGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateEmployeeGroupSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEmployeeGroups">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/RemoveEmployeeGroups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RemoveEmployeeGroupsSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeGroupForEmployee">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetEmployeeGroupForEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetEmployeeGroupForEmployeeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployees">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetEmployees" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetEmployeesSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeesForEmployeeGroup">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetEmployeesForEmployeeGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetEmployeesForEmployeeGroupSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeDetail">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetEmployeeDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetEmployeeDetailSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateEmployee">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CreateEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateEmployeeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployee">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateEmployeeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEmployees">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/RemoveEmployees" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RemoveEmployeesSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ChangePasswordSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultEmployeeForMachineName">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetDefaultEmployeeForMachineName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetDefaultEmployeeForMachineNameSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeSettings">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetEmployeeSettings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetEmployeeSettingsSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeSettingsForEmployee">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetEmployeeSettingsForEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetEmployeeSettingsForEmployeeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetEmployeeSettingsForEmployee">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/SetEmployeeSettingsForEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SetEmployeeSettingsForEmployeeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EmployeeService">
+    <wsdl:port name="EmployeeServiceSoap" binding="tns:EmployeeServiceSoap">
+      <soap:address location="http://localhost/SWMSuite.Facade.WebService/EmployeeService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EmployeeServiceSoap12" binding="tns:EmployeeServiceSoap12">
+      <soap12:address location="http://localhost/SWMSuite.Facade.WebService/EmployeeService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

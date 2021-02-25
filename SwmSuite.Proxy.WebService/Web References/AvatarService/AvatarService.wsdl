@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="SimpleWorkfloorManagementSuiteNameSpace" xmlns:s1="SwmSuite_v1" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="SimpleWorkfloorManagementSuiteNameSpace" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="SimpleWorkfloorManagementSuiteNameSpace">
+      <s:import namespace="SwmSuite_v1" />
+      <s:element name="GetAvatars">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAvatarsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAvatarsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="Avatar" nillable="true" type="s1:Avatar" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SwmSuiteSoapHeader" type="tns:SwmSuiteSoapHeader" />
+      <s:complexType name="SwmSuiteSoapHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Employee" type="s:int" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetAvatar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sysId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvatarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAvatarResult" type="s1:Avatar" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAvatar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="avatar" type="s1:Avatar" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAvatarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateAvatarResult" type="s1:Avatar" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAvatar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="avatar" type="s1:Avatar" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAvatarResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveAvatars">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="avatars">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="Avatar" nillable="true" type="s1:Avatar" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveAvatarsResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="SwmSuite_v1">
+      <s:complexType name="Avatar">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Picture" type="s:base64Binary" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BusinessObjectBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SysId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowVersion" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAvatarsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAvatars" />
+  </wsdl:message>
+  <wsdl:message name="GetAvatarsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAvatarsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAvatarsSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetAvatarSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAvatar" />
+  </wsdl:message>
+  <wsdl:message name="GetAvatarSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAvatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAvatarSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreateAvatarSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateAvatar" />
+  </wsdl:message>
+  <wsdl:message name="CreateAvatarSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateAvatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateAvatarSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAvatarSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAvatar" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAvatarSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAvatarResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAvatarSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="RemoveAvatarsSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveAvatars" />
+  </wsdl:message>
+  <wsdl:message name="RemoveAvatarsSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveAvatarsResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveAvatarsSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:portType name="AvatarServiceSoap">
+    <wsdl:operation name="GetAvatars">
+      <wsdl:input message="tns:GetAvatarsSoapIn" />
+      <wsdl:output message="tns:GetAvatarsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvatar">
+      <wsdl:input message="tns:GetAvatarSoapIn" />
+      <wsdl:output message="tns:GetAvatarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAvatar">
+      <wsdl:input message="tns:CreateAvatarSoapIn" />
+      <wsdl:output message="tns:CreateAvatarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAvatar">
+      <wsdl:input message="tns:UpdateAvatarSoapIn" />
+      <wsdl:output message="tns:UpdateAvatarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAvatars">
+      <wsdl:input message="tns:RemoveAvatarsSoapIn" />
+      <wsdl:output message="tns:RemoveAvatarsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AvatarServiceSoap" type="tns:AvatarServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAvatars">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetAvatars" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAvatarsSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvatar">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetAvatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAvatarSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAvatar">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CreateAvatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateAvatarSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAvatar">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateAvatar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateAvatarSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAvatars">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/RemoveAvatars" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RemoveAvatarsSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AvatarServiceSoap12" type="tns:AvatarServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAvatars">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetAvatars" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAvatarsSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvatar">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetAvatar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAvatarSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAvatar">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CreateAvatar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateAvatarSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAvatar">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateAvatar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateAvatarSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAvatars">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/RemoveAvatars" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RemoveAvatarsSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AvatarService">
+    <wsdl:port name="AvatarServiceSoap" binding="tns:AvatarServiceSoap">
+      <soap:address location="http://localhost/SWMSuite.Facade.WebService/AvatarService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AvatarServiceSoap12" binding="tns:AvatarServiceSoap12">
+      <soap12:address location="http://localhost/SWMSuite.Facade.WebService/AvatarService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

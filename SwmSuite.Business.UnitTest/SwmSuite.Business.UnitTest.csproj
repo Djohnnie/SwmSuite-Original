@@ -1,0 +1,200 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CDF8D892-9F66-42FD-8574-AD17AC0E51EE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SwmSuite.Business.UnitTest</RootNamespace>
+    <AssemblyName>SwmSuite.Business.UnitTest</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\bin\Debug\SwmSuite.Business.UnitTest.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MSTest.TestFramework.2.1.2\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MSTest.TestFramework.2.1.2\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgendaBllTest.cs" />
+    <Compile Include="AppointmentBllTest.cs" />
+    <Compile Include="AppointmentGuestBllTest.cs" />
+    <Compile Include="AppointmentRecurrenceBllTest.cs" />
+    <Compile Include="AlertBllTest.cs" />
+    <Compile Include="ConnectionLogBllTest.cs" />
+    <Compile Include="EmployeeBllTest.cs" />
+    <Compile Include="EmployeeGroupBllTest.cs" />
+    <Compile Include="ConnectionTestBllTest.cs" />
+    <Compile Include="CountryBllTest.cs" />
+    <Compile Include="EmployeeAlertBllTest.cs" />
+    <Compile Include="EmployeeGroupAlertBllTest.cs" />
+    <Compile Include="AvatarBllTest.cs" />
+    <Compile Include="EmployeeSettingsBllTest.cs" />
+    <Compile Include="HolidayDefinitionBllTest.cs" />
+    <Compile Include="LoginLogBllTest.cs" />
+    <Compile Include="OvertimeEntryBllTest.cs" />
+    <Compile Include="RecurrenceBllTest.cs" />
+    <Compile Include="RecurrenceCoreTest.cs" />
+    <Compile Include="TimeTableEntryBllTest.cs" />
+    <Compile Include="TimeTablePurposeBllTest.cs" />
+    <Compile Include="TimeTableTemplateBllTest.cs" />
+    <Compile Include="TimeTableTemplateEntryBllTest.cs" />
+    <Compile Include="UnitTestHelper\ConnectionLogUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\EmployeeSettingsUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\HolidayDefinitionUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\LoginLogUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\OvertimeEntryUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\TimeTableEntryUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\TimeTablePurposeUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\TimeTableTemplateEntryUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\TimeTableTemplateUnitTestHelper.cs" />
+    <Compile Include="ZipCodeBllTest.cs" />
+    <Compile Include="MessageBllTest.cs" />
+    <Compile Include="MessageFolderBllTest.cs" />
+    <Compile Include="MessageRecipientBllTest.cs" />
+    <Compile Include="MessageStorageBllTest.cs" />
+    <Compile Include="LogDeleteBllTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TaskBllTest.cs" />
+    <Compile Include="TaskDescriptionBllTest.cs" />
+    <Compile Include="TaskRecurrenceBllTest.cs" />
+    <Compile Include="TaskRunBllTest.cs" />
+    <Compile Include="UnitTestHelper\AgendaUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\AppointmentGuestUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\AppointmentRecurrenceUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\AppointmentUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\AlertUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\EmployeeGroupUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\EmployeeUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\CountryUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\EmployeeAlertUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\EmployeeGroupAlertUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\AvatarUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\RecurrenceUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\ZipCodeUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\MessageFolderUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\MessageRecipientUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\MessageStorageUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\MessageUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\TaskDescriptionUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\TaskRecurrenceUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\TaskRunUnitTestHelper.cs" />
+    <Compile Include="UnitTestHelper\TaskUnitTestHelper.cs" />
+    <Compile Include="UnitTestUtils.cs" />
+    <Compile Include="UserBllTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AuthoringTests.txt" />
+    <None Include="packages.config" />
+    <None Include="Resources\avatar_unittests.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SWMSuite.Business\SwmSuite.Business.csproj">
+      <Project>{2F58EE63-A226-4E2B-9F8D-AD49C6EF3C84}</Project>
+      <Name>SwmSuite.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SwmSuite.Data.Common\SwmSuite.Data.Common.csproj">
+      <Project>{E35CC450-D0C1-45C5-9BB0-2D1BE871CD98}</Project>
+      <Name>SwmSuite.Data.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWMSuite.DataAccess.Interface\SwmSuite.DataAccess.Interface.csproj">
+      <Project>{CBF925E3-63A1-4383-8F60-58796D9F7C31}</Project>
+      <Name>SwmSuite.DataAccess.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWMSuite.DataAccess.NHibernate\SwmSuite.DataAccess.NHibernate.csproj">
+      <Project>{07788199-6F84-4532-BC86-C7033FF6A277}</Project>
+      <Name>SwmSuite.DataAccess.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWMSuite.DataAccess.Sql\SwmSuite.DataAccess.Sql.csproj">
+      <Project>{4B1B3B2E-5972-4A6E-814B-6E043348C2A1}</Project>
+      <Name>SwmSuite.DataAccess.Sql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SwmSuite.Framework.BusinessObjects\SwmSuite.Data.BusinessObjects.csproj">
+      <Project>{D06DC017-74A1-4B63-82BC-7019B9C6333B}</Project>
+      <Name>SwmSuite.Data.BusinessObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SwmSuite.Framework.DataObjects\SwmSuite.Data.DataObjects.csproj">
+      <Project>{638BF0C2-5CD7-462B-AE9E-DEFAC3D18BCF}</Project>
+      <Name>SwmSuite.Data.DataObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWMSuite.Framework\SwmSuite.Framework.csproj">
+      <Project>{948A5F7B-C897-4A4D-8B0C-EE52B026B186}</Project>
+      <Name>SwmSuite.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

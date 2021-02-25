@@ -1,0 +1,660 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{86C17954-908E-4449-9F41-53102DE7812E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SwmSuite.Presentation.Common</RootNamespace>
+    <AssemblyName>SwmSuite.Presentation.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <OutputType>Library</OutputType>
+    <AssemblyName>SwmSuite.Presentation.Common</AssemblyName>
+    <RootNamespace>SwmSuite.Presentation.Common</RootNamespace>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <DocumentationFile>..\bin\Debug\SwmSuite.Presentation.Common.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <OutputType>Library</OutputType>
+    <AssemblyName>SwmSuite.Presentation.Common</AssemblyName>
+    <DebugSymbols>true</DebugSymbols>
+    <RootNamespace>SwmSuite.Presentation.Common</RootNamespace>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgendaControl\AgendaAppointment.cs" />
+    <Compile Include="AgendaControl\AgendaAppointmentCollection.cs" />
+    <Compile Include="AgendaControl\AgendaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AgendaControl\AgendaControl.Designer.cs">
+      <DependentUpon>AgendaControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgendaControl\AgendaDayHitTester.cs" />
+    <Compile Include="AgendaControl\AgendaDayRenderer.cs" />
+    <Compile Include="AgendaControl\AgendaHitTestArea.cs" />
+    <Compile Include="AgendaControl\AgendaHitTester.cs" />
+    <Compile Include="AgendaControl\AgendaMonthHitTester.cs" />
+    <Compile Include="AgendaControl\AgendaMonthRenderer.cs" />
+    <Compile Include="AgendaControl\AgendaNeedsUpdateEventArgs.cs" />
+    <Compile Include="AgendaControl\AgendaNullRenderer.cs" />
+    <Compile Include="AgendaControl\AgendaRenderer.cs" />
+    <Compile Include="AgendaControl\AgendaScheme.cs" />
+    <Compile Include="AgendaControl\AgendaSettings.cs" />
+    <Compile Include="AgendaControl\AgendaTools.cs" />
+    <Compile Include="AgendaControl\AgendaViewMode.cs" />
+    <Compile Include="AgendaControl\AgendaWeekHitTester.cs" />
+    <Compile Include="AgendaControl\AgendaWeekRenderer.cs" />
+    <Compile Include="AgendaControl\AppointmentSelectionChangedEventArgs.cs" />
+    <Compile Include="AnalogClock\AnalogClockControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AnalogClock\AnalogClockControl.Designer.cs">
+      <DependentUpon>AnalogClockControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnalogClock\AnalogClockRenderer.cs" />
+    <Compile Include="AnalogClock\AnalogClockScheme.cs" />
+    <Compile Include="AnalogClock\NiceAnalogClockControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AnalogClock\NiceAnalogClockControl.Designer.cs">
+      <DependentUpon>NiceAnalogClockControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnalogClock\NiceAnalogClockRenderer.cs" />
+    <Compile Include="AnalogClock\NiceAnalogClockScheme.cs" />
+    <Compile Include="ApplicationIdle\ActivityEventArgs.cs" />
+    <Compile Include="ApplicationIdle\ActivityMessages.cs" />
+    <Compile Include="ApplicationIdle\ApplicationIdle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ApplicationIdle\TickEventArgs.cs" />
+    <Compile Include="ApplicationIdle\WarnSettings.cs" />
+    <Compile Include="AvatarBrowser\AvatarBrowserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AvatarBrowser\AvatarBrowserControl.Designer.cs">
+      <DependentUpon>AvatarBrowserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AvatarBrowser\AvatarBrowserImageObject.cs" />
+    <Compile Include="AvatarBrowser\AvatarBrowserRenderer.cs" />
+    <Compile Include="AvatarBrowser\AvatarBrowserScheme.cs" />
+    <Compile Include="BrowserTreeView\BrowserTreeViewControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BrowserView\BrowserViewControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BrowserView\BrowserViewRenderer.cs" />
+    <Compile Include="BrowserView\BrowserViewScheme.cs" />
+    <Compile Include="Button\ButtonControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Button\ButtonControl.Designer.cs">
+      <DependentUpon>ButtonControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Button\ButtonRenderer.cs" />
+    <Compile Include="Button\ButtonScheme.cs" />
+    <Compile Include="Button\ButtonState.cs" />
+    <Compile Include="CheckList\CheckListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CheckList\CheckListControl.Designer.cs">
+      <DependentUpon>CheckListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckList\CheckListHitTester.cs" />
+    <Compile Include="CheckList\CheckListItem.cs" />
+    <Compile Include="CheckList\CheckListItemCollection.cs" />
+    <Compile Include="CheckList\CheckListRenderer.cs" />
+    <Compile Include="CheckList\CheckListScheme.cs" />
+    <Compile Include="Clock\ClockControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Clock\ClockControl.Designer.cs">
+      <DependentUpon>ClockControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clock\ClockRenderer.cs" />
+    <Compile Include="Clock\ClockScheme.cs" />
+    <Compile Include="DialogHeader\DialogHeaderControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DialogHeader\DialogHeaderControl.Designer.cs">
+      <DependentUpon>DialogHeaderControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogHeader\DialogHeaderRenderer.cs" />
+    <Compile Include="DialogHeader\DialogHeaderScheme.cs" />
+    <Compile Include="EmployeeGroupTab\EmployeeGroupTabItem.cs" />
+    <Compile Include="EmployeeGroupTab\EmployeeGroupTabControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EmployeeGroupTab\EmployeeGroupTabControl.Designer.cs">
+      <DependentUpon>EmployeeGroupTabControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeGroupTab\EmployeeGroupTabRenderer.cs" />
+    <Compile Include="EmployeeGroupTab\EmployeeGroupTabScheme.cs" />
+    <Compile Include="EmployeeGroupTab\EmployeeGroupTabSelectionEventArgs.cs" />
+    <Compile Include="Group\GroupControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Group\GroupControl.Designer.cs">
+      <DependentUpon>GroupControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Group\GroupRenderer.cs" />
+    <Compile Include="Group\GroupScheme.cs" />
+    <Compile Include="LoginButton\LoginButtonCollection.cs" />
+    <Compile Include="LoginButton\LoginButtonControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LoginButton\LoginButtonControl.Designer.cs">
+      <DependentUpon>LoginButtonControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginButton\LoginButtonRenderer.cs" />
+    <Compile Include="LoginButton\LoginButtonScheme.cs" />
+    <Compile Include="LoginButton\LoginButtonState.cs" />
+    <Compile Include="LogOnWindow\LogOnWindowColorScheme.cs" />
+    <Compile Include="LogOnWindow\LogOnWindowControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LogOnWindow\LogOnWindowControl.Designer.cs">
+      <DependentUpon>LogOnWindowControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogOnWindow\LogOnWindowRenderer.cs" />
+    <Compile Include="Marquee\MarqueeButtonControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Marquee\MarqueeButtonControl.Designer.cs">
+      <DependentUpon>MarqueeButtonControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marquee\MarqueeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Marquee\MarqueeControl.Designer.cs">
+      <DependentUpon>MarqueeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marquee\MarqueeRenderer.cs" />
+    <Compile Include="Marquee\MarqueeScheme.cs" />
+    <Compile Include="MessageDialog\MessageDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageDialog\MessageDialog.Designer.cs">
+      <DependentUpon>MessageDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MirrorText\MirrorTextControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MirrorText\MirrorTextControl.Designer.cs">
+      <DependentUpon>MirrorTextControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MirrorText\MirrorTextRenderer.cs" />
+    <Compile Include="MirrorText\MirrorTextScheme.cs" />
+    <Compile Include="ModuleWindowHeader\ModuleWindowHeaderControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuleWindowHeader\ModuleWindowHeaderControl.Designer.cs">
+      <DependentUpon>ModuleWindowHeaderControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleWindowHeader\ModuleWindowHeaderRenderer.cs" />
+    <Compile Include="ModuleWindowHeader\ModuleWindowHeaderScheme.cs" />
+    <Compile Include="ModuleWindowMenu\ModuleWindowMenuControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModuleWindowMenu\ModuleWindowMenuControl.Designer.cs">
+      <DependentUpon>ModuleWindowMenuControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleWindowMenu\ModuleWindowMenuEventArgs.cs" />
+    <Compile Include="ModuleWindowMenu\ModuleWindowMenuHitTester.cs" />
+    <Compile Include="ModuleWindowMenu\ModuleWindowMenuItem.cs" />
+    <Compile Include="ModuleWindowMenu\ModuleWindowMenuItemCollection.cs" />
+    <Compile Include="ModuleWindowMenu\ModuleWindowMenuItemState.cs" />
+    <Compile Include="ModuleWindowMenu\ModuleWindowMenuRenderer.cs" />
+    <Compile Include="ModuleWindowMenu\ModuleWindowMenuScheme.cs" />
+    <Compile Include="ModuleWindow\ModuleWindowColorScheme.cs" />
+    <Compile Include="ModuleWindow\ModuleWindowControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleWindow\ModuleWindowControl.designer.cs">
+      <DependentUpon>ModuleWindowControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleWindow\ModuleWindowRenderer.cs" />
+    <Compile Include="NiceComboBox\NiceComboBoxControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NiceComboBox\NiceComboBoxControl.Designer.cs">
+      <DependentUpon>NiceComboBoxControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NiceTextBox\NiceTextBoxControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NiceTextBox\NiceTextBoxControl.Designer.cs">
+      <DependentUpon>NiceTextBoxControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUpButton\PopUpButtonControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PopUpButton\PopUpButtonControl.Designer.cs">
+      <DependentUpon>PopUpButtonControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUpButton\PopUpButtonRenderer.cs" />
+    <Compile Include="PopUpButton\PopUpButtonScheme.cs" />
+    <Compile Include="PopUpButton\PopUpButtonState.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RadioGroup\RadioGroupControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RadioGroup\RadioGroupControl.Designer.cs">
+      <DependentUpon>RadioGroupControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RadioGroup\RadioGroupItem.cs" />
+    <Compile Include="RadioGroup\RadioGroupSelectionChangedEventArgs.cs" />
+    <Compile Include="Ribbon\IContainsRibbonComponents.cs" />
+    <Compile Include="Ribbon\IContainsSelectableRibbonItems.cs" />
+    <Compile Include="Ribbon\IDropDownRibbonItem.cs" />
+    <Compile Include="Ribbon\IRibbonElement.cs" />
+    <Compile Include="Ribbon\IScrollableRibbonItem.cs" />
+    <Compile Include="Ribbon\Ribbon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ribbon\RibbonButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ribbon\RibbonButtonCollection.cs" />
+    <Compile Include="Ribbon\RibbonButtonDesigner.cs" />
+    <Compile Include="Ribbon\RibbonButtonList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ribbon\RibbonButtonListDesigner.cs" />
+    <Compile Include="Ribbon\RibbonButtonStyle.cs" />
+    <Compile Include="Ribbon\RibbonCanvasEventArgs.cs" />
+    <Compile Include="Ribbon\RibbonColorChooser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ribbon\RibbonComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ribbon\RibbonComboBoxDesigner.cs" />
+    <Compile Include="Ribbon\RibbonContext.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ribbon\RibbonContextCollection.cs" />
+    <Compile Include="Ribbon\RibbonDesigner.cs" />
+    <Compile Include="Ribbon\RibbonDropDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ribbon\RibbonElementMeasureSizeEventArgs.cs" />
+    <Compile Include="Ribbon\RibbonElementPaintEventArgs.cs" />
+    <Compile Include="Ribbon\RibbonElementWithItemCollectionDesigner.cs" />
+    <Compile Include="Ribbon\RibbonItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ribbon\RibbonItemBoundsEventArgs.cs" />
+    <Compile Include="Ribbon\RibbonItemCollection.cs" />
+    <Compile Include="Ribbon\RibbonItemCollectionEditor.cs" />
+    <Compile Include="Ribbon\RibbonItemGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ribbon\RibbonItemGroupDesigner.cs" />
+    <Compile Include="Ribbon\RibbonItemGroupItemCollection.cs" />
+    <Compile Include="Ribbon\RibbonItemRenderEventArgs.cs" />
+    <Compile Include="Ribbon\RibbonPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ribbon\RibbonPanelCollection.cs" />
+    <Compile Include="Ribbon\RibbonPanelDesigner.cs" />
+    <Compile Include="Ribbon\RibbonPanelFlowDirection.cs" />
+    <Compile Include="Ribbon\RibbonPanelPopup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ribbon\RibbonPanelRenderEventArgs.cs" />
+    <Compile Include="Ribbon\RibbonPanelSizeMode.cs" />
+    <Compile Include="Ribbon\RibbonPopup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ribbon\RibbonProfesionalRendererColorTable.cs" />
+    <Compile Include="Ribbon\RibbonProfesionalRendererColorTableBlack.cs" />
+    <Compile Include="Ribbon\RibbonProfessionalRenderer.cs" />
+    <Compile Include="Ribbon\RibbonRenderer.cs" />
+    <Compile Include="Ribbon\RibbonRenderEventArgs.cs" />
+    <Compile Include="Ribbon\RibbonSensor.cs" />
+    <Compile Include="Ribbon\RibbonSeparator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ribbon\RibbonTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ribbon\RibbonTabCollection.cs" />
+    <Compile Include="Ribbon\RibbonTabDesigner.cs" />
+    <Compile Include="Ribbon\RibbonTabRenderEventArgs.cs" />
+    <Compile Include="Ribbon\RibbonTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SelectorControl\SelectorRenderer.cs" />
+    <Compile Include="SelectorControl\SelectorScheme.cs" />
+    <Compile Include="StatusGroup\StatusGroupAlignment.cs" />
+    <Compile Include="StatusGroup\StatusGroupControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StatusGroup\StatusGroupControl.Designer.cs">
+      <DependentUpon>StatusGroupControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StatusGroup\StatusGroupRenderer.cs" />
+    <Compile Include="StatusGroup\StatusGroupScheme.cs" />
+    <Compile Include="StatusGroup\StatusGroupStatus.cs" />
+    <Compile Include="Status\StatusControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Status\StatusControl.Designer.cs">
+      <DependentUpon>StatusControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Status\StatusRenderer.cs" />
+    <Compile Include="Status\StatusScheme.cs" />
+    <Compile Include="SwmsLogo\SwmsLogoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SwmsLogo\SwmsLogoControl.Designer.cs">
+      <DependentUpon>SwmsLogoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SwmsLogo\SwmsLogoRenderer.cs" />
+    <Compile Include="SwmsLogo\SwmsLogoScheme.cs" />
+    <Compile Include="TimeTable\DataClickedEventArgs.cs" />
+    <Compile Include="TimeTable\OccupationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TimeTable\OccupationControl.Designer.cs">
+      <DependentUpon>OccupationControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimeTable\OccupationRenderer.cs" />
+    <Compile Include="TimeTable\OccupationScheme.cs" />
+    <Compile Include="TimeTable\OccupationSettings.cs" />
+    <Compile Include="TimeTable\TimeTableColumn.cs" />
+    <Compile Include="TimeTable\TimeTableColumnCollection.cs" />
+    <Compile Include="TimeTable\TimeTableControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TimeTable\TimeTableControl.Designer.cs">
+      <DependentUpon>TimeTableControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimeTable\TimeTableControlEntry.cs" />
+    <Compile Include="TimeTable\TimeTableControlEntryCollection.cs" />
+    <Compile Include="TimeTable\TimeTableHitTest.cs" />
+    <Compile Include="TimeTable\TimeTableHitTestInfo.cs" />
+    <Compile Include="TimeTable\TimeTableRenderer.cs" />
+    <Compile Include="TimeTable\TimeTableScheme.cs" />
+    <Compile Include="UserControls\CircularProgressControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\CircularProgressControl.Designer.cs">
+      <DependentUpon>CircularProgressControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ColorBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ColorBox.Designer.cs">
+      <DependentUpon>ColorBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SplashControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SplashControl.Designer.cs">
+      <DependentUpon>SplashControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ToolStripFontComboBox.cs" />
+    <Compile Include="UserControls\WizardBottomPaneControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\WizardBottomPaneControl.Designer.cs">
+      <DependentUpon>WizardBottomPaneControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WizardTopPaneControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\WizardTopPaneControl.Designer.cs">
+      <DependentUpon>WizardTopPaneControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\ValidationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Validation\ValidationControl.Designer.cs">
+      <DependentUpon>ValidationControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowPanel\WindowPanelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WindowPanel\WindowPanelControl.Designer.cs">
+      <DependentUpon>WindowPanelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowPanel\WindowPanelRenderer.cs" />
+    <Compile Include="WindowPanel\WindowPanelScheme.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AgendaControl\AgendaControl.resx">
+      <DependentUpon>AgendaControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnalogClock\AnalogClockControl.resx">
+      <DependentUpon>AnalogClockControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnalogClock\NiceAnalogClockControl.resx">
+      <DependentUpon>NiceAnalogClockControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AvatarBrowser\AvatarBrowserControl.resx">
+      <DependentUpon>AvatarBrowserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BrowserTreeView\BrowserTreeViewControl.resx">
+      <DependentUpon>BrowserTreeViewControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BrowserView\BrowserViewControl.resx">
+      <DependentUpon>BrowserViewControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Button\ButtonControl.resx">
+      <DependentUpon>ButtonControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckList\CheckListControl.resx">
+      <DependentUpon>CheckListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clock\ClockControl.resx">
+      <DependentUpon>ClockControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogHeader\DialogHeaderControl.resx">
+      <DependentUpon>DialogHeaderControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeGroupTab\EmployeeGroupTabControl.resx">
+      <DependentUpon>EmployeeGroupTabControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Group\GroupControl.resx">
+      <DependentUpon>GroupControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginButton\LoginButtonControl.resx">
+      <DependentUpon>LoginButtonControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marquee\MarqueeButtonControl.resx">
+      <DependentUpon>MarqueeButtonControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marquee\MarqueeControl.resx">
+      <DependentUpon>MarqueeControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageDialog\MessageDialog.resx">
+      <DependentUpon>MessageDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MirrorText\MirrorTextControl.resx">
+      <DependentUpon>MirrorTextControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleWindowHeader\ModuleWindowHeaderControl.resx">
+      <DependentUpon>ModuleWindowHeaderControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleWindowMenu\ModuleWindowMenuControl.resx">
+      <DependentUpon>ModuleWindowMenuControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleWindow\ModuleWindowControl.resx">
+      <DependentUpon>ModuleWindowControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NiceComboBox\NiceComboBoxControl.resx">
+      <DependentUpon>NiceComboBoxControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NiceTextBox\NiceTextBoxControl.resx">
+      <DependentUpon>NiceTextBoxControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUpButton\PopUpButtonControl.resx">
+      <DependentUpon>PopUpButtonControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RadioGroup\RadioGroupControl.resx">
+      <DependentUpon>RadioGroupControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusGroup\StatusGroupControl.resx">
+      <DependentUpon>StatusGroupControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Status\StatusControl.resx">
+      <DependentUpon>StatusControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SwmsLogo\SwmsLogoControl.resx">
+      <DependentUpon>SwmsLogoControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimeTable\OccupationControl.resx">
+      <DependentUpon>OccupationControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimeTable\TimeTableControl.resx">
+      <DependentUpon>TimeTableControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CircularProgressControl.resx">
+      <DependentUpon>CircularProgressControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ColorBox.resx">
+      <DependentUpon>ColorBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SplashControl.resx">
+      <DependentUpon>SplashControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\WizardBottomPaneControl.resx">
+      <DependentUpon>WizardBottomPaneControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\WizardTopPaneControl.resx">
+      <DependentUpon>WizardTopPaneControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Validation\ValidationControl.resx">
+      <DependentUpon>ValidationControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowPanel\WindowPanelControl.resx">
+      <DependentUpon>WindowPanelControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SWMSuite.Framework\SwmSuite.Framework.csproj">
+      <Project>{948A5F7B-C897-4A4D-8B0C-EE52B026B186}</Project>
+      <Name>SwmSuite.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWMSuite.Presentation.Drawing\SwmSuite.Presentation.Drawing.csproj">
+      <Project>{670609E1-44D9-472A-AE11-E97EBECE6976}</Project>
+      <Name>SwmSuite.Presentation.Drawing</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

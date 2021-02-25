@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="SimpleWorkfloorManagementSuiteNameSpace" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="SimpleWorkfloorManagementSuiteNameSpace" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="SimpleWorkfloorManagementSuiteNameSpace">
+      <s:element name="CheckConnection">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckConnectionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckConnectionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SwmSuiteSoapHeader" type="tns:SwmSuiteSoapHeader" />
+      <s:complexType name="SwmSuiteSoapHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Employee" type="s:int" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CheckConnectionSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckConnection" />
+  </wsdl:message>
+  <wsdl:message name="CheckConnectionSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckConnectionSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:portType name="ConnectionTestServiceSoap">
+    <wsdl:operation name="CheckConnection">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;font color = blue&gt;summary: &lt;/font&gt;Check the connection by returing the value in the ConnectionTest table.&lt;/br&gt;&lt;font color = blue&gt;returns: &lt;/font&gt;True if the value could be retrieved from the database.</wsdl:documentation>
+      <wsdl:input message="tns:CheckConnectionSoapIn" />
+      <wsdl:output message="tns:CheckConnectionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConnectionTestServiceSoap" type="tns:ConnectionTestServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckConnection">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CheckConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CheckConnectionSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConnectionTestServiceSoap12" type="tns:ConnectionTestServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckConnection">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CheckConnection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CheckConnectionSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConnectionTestService">
+    <wsdl:port name="ConnectionTestServiceSoap" binding="tns:ConnectionTestServiceSoap">
+      <soap:address location="http://localhost/SWMSuite.Facade.WebService/ConnectionTestService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ConnectionTestServiceSoap12" binding="tns:ConnectionTestServiceSoap12">
+      <soap12:address location="http://localhost/SWMSuite.Facade.WebService/ConnectionTestService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

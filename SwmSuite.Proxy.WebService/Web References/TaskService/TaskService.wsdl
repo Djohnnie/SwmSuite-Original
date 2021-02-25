@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="SimpleWorkfloorManagementSuiteNameSpace" xmlns:s1="SwmSuite_v1" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s2="http://microsoft.com/wsdl/types/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="SimpleWorkfloorManagementSuiteNameSpace" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="SimpleWorkfloorManagementSuiteNameSpace">
+      <s:import namespace="SwmSuite_v1" />
+      <s:element name="GetTasksForEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employee" type="s1:Employee" />
+            <s:element minOccurs="1" maxOccurs="1" name="year" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTasksForEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTasksForEmployeeResult" type="tns:ArrayOfTask" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTask">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Task" nillable="true" type="s1:Task" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SwmSuiteSoapHeader" type="tns:SwmSuiteSoapHeader" />
+      <s:complexType name="SwmSuiteSoapHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Employee" type="s:int" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetPendingTasksForEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employee" type="s1:Employee" />
+            <s:element minOccurs="1" maxOccurs="1" name="year" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPendingTasksForEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPendingTasksForEmployeeResult" type="tns:ArrayOfTask" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompletedTasksForEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employee" type="s1:Employee" />
+            <s:element minOccurs="1" maxOccurs="1" name="year" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompletedTasksForEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCompletedTasksForEmployeeResult" type="tns:ArrayOfTask" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFailedTasksForEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employee" type="s1:Employee" />
+            <s:element minOccurs="1" maxOccurs="1" name="year" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFailedTasksForEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFailedTasksForEmployeeResult" type="tns:ArrayOfTask" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOverDueTasksForEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employee" type="s1:Employee" />
+            <s:element minOccurs="1" maxOccurs="1" name="year" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOverDueTasksForEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOverDueTasksForEmployeeResult" type="tns:ArrayOfTask" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateTask">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="task" type="s1:Task" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateTaskResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CompleteTask">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="taskRun" type="s1:TaskRun" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompleteTaskResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="SwmSuite_v1">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:complexType name="Employee">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="UserSysId" type="s2:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s1:ZipCode" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrivatePhoneNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="WorkPhoneNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CellPhoneNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress3" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress4" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress5" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Avatar" type="s1:Avatar" />
+              <s:element minOccurs="0" maxOccurs="1" name="Settings" type="s1:EmployeeSettings" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Administrator" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BusinessObjectBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SysId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowVersion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValidationErrors" type="s1:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TaskRun">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Finished" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="Remarks" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Mode" type="s1:TaskRunMode" />
+              <s:element minOccurs="0" maxOccurs="1" name="Task" type="s1:Task" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="TaskRunMode">
+        <s:restriction base="s:string">
+          <s:enumeration value="TaskFinished" />
+          <s:enumeration value="TaskFailed" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="Task">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CreationDate" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Deadline" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="Commissioner" type="s1:Employee" />
+              <s:element minOccurs="0" maxOccurs="1" name="Employees">
+                <s:complexType>
+                  <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="unbounded" name="Employee" nillable="true" type="s1:Employee" />
+                  </s:sequence>
+                </s:complexType>
+              </s:element>
+              <s:element minOccurs="0" maxOccurs="1" name="Employee" type="s1:Employee" />
+              <s:element minOccurs="0" maxOccurs="1" name="Recurrence" type="s1:Recurrence" />
+              <s:element minOccurs="0" maxOccurs="1" name="TaskRun" type="s1:TaskRun" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Recurrence">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="RecurrenceMode" type="s1:RecurrenceMode" />
+              <s:element minOccurs="1" maxOccurs="1" name="Every" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="EveryWeekDay" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="Days" type="s1:DaySelection" />
+              <s:element minOccurs="1" maxOccurs="1" name="DayOfMonth" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Occurrence" type="s1:Occurrence" />
+              <s:element minOccurs="1" maxOccurs="1" name="Day" type="s1:Days" />
+              <s:element minOccurs="1" maxOccurs="1" name="Month" type="s1:Months" />
+              <s:element minOccurs="1" maxOccurs="1" name="Choice" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="EndMode" type="s1:RecurrenceEndMode" />
+              <s:element minOccurs="1" maxOccurs="1" name="Occurrences" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="RecurrenceMode">
+        <s:restriction base="s:string">
+          <s:enumeration value="Daily" />
+          <s:enumeration value="Weekly" />
+          <s:enumeration value="Monthly" />
+          <s:enumeration value="Yearly" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="DaySelection">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Monday" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tuesday" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Wednesday" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Thursday" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Friday" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Saturday" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Sunday" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Occurrence">
+        <s:restriction base="s:string">
+          <s:enumeration value="First" />
+          <s:enumeration value="Second" />
+          <s:enumeration value="Third" />
+          <s:enumeration value="Fourth" />
+          <s:enumeration value="Last" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="Days">
+        <s:restriction base="s:string">
+          <s:enumeration value="Monday" />
+          <s:enumeration value="Tuesday" />
+          <s:enumeration value="Wednesday" />
+          <s:enumeration value="Thursday" />
+          <s:enumeration value="Friday" />
+          <s:enumeration value="Saturday" />
+          <s:enumeration value="Sunday" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="Months">
+        <s:restriction base="s:string">
+          <s:enumeration value="January" />
+          <s:enumeration value="February" />
+          <s:enumeration value="March" />
+          <s:enumeration value="April" />
+          <s:enumeration value="May" />
+          <s:enumeration value="June" />
+          <s:enumeration value="July" />
+          <s:enumeration value="August" />
+          <s:enumeration value="September" />
+          <s:enumeration value="October" />
+          <s:enumeration value="November" />
+          <s:enumeration value="December" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="RecurrenceEndMode">
+        <s:restriction base="s:string">
+          <s:enumeration value="Infinite" />
+          <s:enumeration value="ByNumber" />
+          <s:enumeration value="ByDate" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="EmployeeSettings">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="AutoLogon" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="AutoLogonHost" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="LogoutTimeout" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="EmailNotification" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SmtpServer" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="SmtpPort" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="SecureConnection" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="Authentication" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Avatar">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Picture" type="s:base64Binary" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ZipCode">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetTasksForEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTasksForEmployee" />
+  </wsdl:message>
+  <wsdl:message name="GetTasksForEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTasksForEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTasksForEmployeeSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingTasksForEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPendingTasksForEmployee" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingTasksForEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPendingTasksForEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingTasksForEmployeeSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetCompletedTasksForEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCompletedTasksForEmployee" />
+  </wsdl:message>
+  <wsdl:message name="GetCompletedTasksForEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCompletedTasksForEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCompletedTasksForEmployeeSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetFailedTasksForEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFailedTasksForEmployee" />
+  </wsdl:message>
+  <wsdl:message name="GetFailedTasksForEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFailedTasksForEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFailedTasksForEmployeeSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetOverDueTasksForEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOverDueTasksForEmployee" />
+  </wsdl:message>
+  <wsdl:message name="GetOverDueTasksForEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOverDueTasksForEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOverDueTasksForEmployeeSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreateTaskSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateTask" />
+  </wsdl:message>
+  <wsdl:message name="CreateTaskSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateTaskSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="CompleteTaskSoapIn">
+    <wsdl:part name="parameters" element="tns:CompleteTask" />
+  </wsdl:message>
+  <wsdl:message name="CompleteTaskSoapOut">
+    <wsdl:part name="parameters" element="tns:CompleteTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="CompleteTaskSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:portType name="TaskServiceSoap">
+    <wsdl:operation name="GetTasksForEmployee">
+      <wsdl:input message="tns:GetTasksForEmployeeSoapIn" />
+      <wsdl:output message="tns:GetTasksForEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingTasksForEmployee">
+      <wsdl:input message="tns:GetPendingTasksForEmployeeSoapIn" />
+      <wsdl:output message="tns:GetPendingTasksForEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompletedTasksForEmployee">
+      <wsdl:input message="tns:GetCompletedTasksForEmployeeSoapIn" />
+      <wsdl:output message="tns:GetCompletedTasksForEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFailedTasksForEmployee">
+      <wsdl:input message="tns:GetFailedTasksForEmployeeSoapIn" />
+      <wsdl:output message="tns:GetFailedTasksForEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOverDueTasksForEmployee">
+      <wsdl:input message="tns:GetOverDueTasksForEmployeeSoapIn" />
+      <wsdl:output message="tns:GetOverDueTasksForEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTask">
+      <wsdl:input message="tns:CreateTaskSoapIn" />
+      <wsdl:output message="tns:CreateTaskSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompleteTask">
+      <wsdl:input message="tns:CompleteTaskSoapIn" />
+      <wsdl:output message="tns:CompleteTaskSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TaskServiceSoap" type="tns:TaskServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTasksForEmployee">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetTasksForEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTasksForEmployeeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingTasksForEmployee">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetPendingTasksForEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPendingTasksForEmployeeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompletedTasksForEmployee">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetCompletedTasksForEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCompletedTasksForEmployeeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFailedTasksForEmployee">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetFailedTasksForEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetFailedTasksForEmployeeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOverDueTasksForEmployee">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetOverDueTasksForEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetOverDueTasksForEmployeeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTask">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CreateTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateTaskSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompleteTask">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CompleteTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CompleteTaskSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TaskServiceSoap12" type="tns:TaskServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTasksForEmployee">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetTasksForEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTasksForEmployeeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingTasksForEmployee">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetPendingTasksForEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPendingTasksForEmployeeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompletedTasksForEmployee">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetCompletedTasksForEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCompletedTasksForEmployeeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFailedTasksForEmployee">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetFailedTasksForEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetFailedTasksForEmployeeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOverDueTasksForEmployee">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetOverDueTasksForEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetOverDueTasksForEmployeeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTask">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CreateTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateTaskSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompleteTask">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CompleteTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CompleteTaskSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TaskService">
+    <wsdl:port name="TaskServiceSoap" binding="tns:TaskServiceSoap">
+      <soap:address location="http://localhost/SWMSuite.Facade.WebService/TaskService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TaskServiceSoap12" binding="tns:TaskServiceSoap12">
+      <soap12:address location="http://localhost/SWMSuite.Facade.WebService/TaskService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

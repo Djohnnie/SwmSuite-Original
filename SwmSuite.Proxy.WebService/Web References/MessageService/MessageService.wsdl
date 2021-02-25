@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="SimpleWorkfloorManagementSuiteNameSpace" xmlns:s1="SwmSuite_v1" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s2="http://microsoft.com/wsdl/types/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="SimpleWorkfloorManagementSuiteNameSpace" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="SimpleWorkfloorManagementSuiteNameSpace">
+      <s:import namespace="SwmSuite_v1" />
+      <s:element name="GetMessagesForMessageFolder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="messageFolder" type="s1:MessageFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessagesForMessageFolderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMessagesForMessageFolderResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="Message" nillable="true" type="s1:Message" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SwmSuiteSoapHeader" type="tns:SwmSuiteSoapHeader" />
+      <s:complexType name="SwmSuiteSoapHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Employee" type="s:int" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="SendMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s1:Message" />
+            <s:element minOccurs="0" maxOccurs="1" name="employees">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="Employee" nillable="true" type="s1:Employee" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMessageResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s1:Message" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageFolder" type="s1:MessageFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMessageResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="MoveMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s1:Message" />
+            <s:element minOccurs="0" maxOccurs="1" name="source" type="s1:MessageFolder" />
+            <s:element minOccurs="0" maxOccurs="1" name="destination" type="s1:MessageFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MoveMessageResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetRootMessageFolders">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employee" type="s1:Employee" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRootMessageFoldersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRootMessageFoldersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="MessageFolder" nillable="true" type="s1:MessageFolder" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessageFolders">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="messageFolder" type="s1:MessageFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessageFoldersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMessageFoldersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="MessageFolder" nillable="true" type="s1:MessageFolder" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSpecialMessageFolderForEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employee" type="s1:Employee" />
+            <s:element minOccurs="1" maxOccurs="1" name="specialFolder" type="s1:MessageSpecialFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSpecialMessageFolderForEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSpecialMessageFolderForEmployeeResult" type="s1:MessageFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessageFolderDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="messageFolder" type="s1:MessageFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessageFolderDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMessageFolderDetailResult" type="s1:MessageFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateMessageFolder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="messageFolder" type="s1:MessageFolder" />
+            <s:element minOccurs="0" maxOccurs="1" name="parentMessageFolder" type="s1:MessageFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateMessageFolderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateMessageFolderResult" type="s1:MessageFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMessageFolder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="messageFolder" type="s1:MessageFolder" />
+            <s:element minOccurs="0" maxOccurs="1" name="employee" type="s1:Employee" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMessageFolderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateMessageFolderResult" type="s1:MessageFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MoveMessageFolder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="messageFolder" type="s1:MessageFolder" />
+            <s:element minOccurs="0" maxOccurs="1" name="newParentMessageFolder" type="s1:MessageFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MoveMessageFolderResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateReadFlag">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s1:Message" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageFolder" type="s1:MessageFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateReadFlagResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateNewFlag">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s1:Message" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageFolder" type="s1:MessageFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateNewFlagResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteMessageFolder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="messageFolder" type="s1:MessageFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMessageFolderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteMessageFolderResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="SwmSuite_v1">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:complexType name="MessageFolder">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Visible" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="SpecialFolder" type="s1:MessageSpecialFolder" />
+              <s:element minOccurs="0" maxOccurs="1" name="ChildFolders">
+                <s:complexType>
+                  <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="unbounded" name="MessageFolder" nillable="true" type="s1:MessageFolder" />
+                  </s:sequence>
+                </s:complexType>
+              </s:element>
+              <s:element minOccurs="0" maxOccurs="1" name="Messages">
+                <s:complexType>
+                  <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="unbounded" name="Message" nillable="true" type="s1:Message" />
+                  </s:sequence>
+                </s:complexType>
+              </s:element>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BusinessObjectBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SysId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowVersion" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EmployeeSettings">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="AutoLogon" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="AutoLogonHost" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="LogoutTimeout" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="EmailNotification" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SmtpServer" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="SmtpPort" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="SecureConnection" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="Authentication" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Avatar">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Picture" type="s:base64Binary" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ZipCode">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Employee">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="UserSysId" type="s2:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s1:ZipCode" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrivatePhoneNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="WorkPhoneNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CellPhoneNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress3" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress4" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress5" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Avatar" type="s1:Avatar" />
+              <s:element minOccurs="0" maxOccurs="1" name="Settings" type="s1:EmployeeSettings" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Administrator" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Message">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Contents" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Sender" type="s1:Employee" />
+              <s:element minOccurs="0" maxOccurs="1" name="Recipients">
+                <s:complexType>
+                  <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="unbounded" name="Employee" nillable="true" type="s1:Employee" />
+                  </s:sequence>
+                </s:complexType>
+              </s:element>
+              <s:element minOccurs="1" maxOccurs="1" name="Priority" type="s1:MessagePriority" />
+              <s:element minOccurs="1" maxOccurs="1" name="Visible" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsRead" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsNew" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="ParentFolder" type="s1:MessageFolder" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="MessagePriority">
+        <s:restriction base="s:string">
+          <s:enumeration value="High" />
+          <s:enumeration value="Normal" />
+          <s:enumeration value="Low" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="MessageSpecialFolder">
+        <s:restriction base="s:string">
+          <s:enumeration value="None" />
+          <s:enumeration value="Inbox" />
+          <s:enumeration value="Outbox" />
+          <s:enumeration value="Archive" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetMessagesForMessageFolderSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessagesForMessageFolder" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesForMessageFolderSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessagesForMessageFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesForMessageFolderSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMessage" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteMessage" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMessageSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="MoveMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:MoveMessage" />
+  </wsdl:message>
+  <wsdl:message name="MoveMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:MoveMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="MoveMessageSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRootMessageFoldersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRootMessageFolders" />
+  </wsdl:message>
+  <wsdl:message name="GetRootMessageFoldersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRootMessageFoldersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRootMessageFoldersSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageFoldersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessageFolders" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageFoldersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessageFoldersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageFoldersSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetSpecialMessageFolderForEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSpecialMessageFolderForEmployee" />
+  </wsdl:message>
+  <wsdl:message name="GetSpecialMessageFolderForEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSpecialMessageFolderForEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSpecialMessageFolderForEmployeeSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageFolderDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessageFolderDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageFolderDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessageFolderDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageFolderDetailSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreateMessageFolderSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateMessageFolder" />
+  </wsdl:message>
+  <wsdl:message name="CreateMessageFolderSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateMessageFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateMessageFolderSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMessageFolderSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateMessageFolder" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMessageFolderSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateMessageFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMessageFolderSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="MoveMessageFolderSoapIn">
+    <wsdl:part name="parameters" element="tns:MoveMessageFolder" />
+  </wsdl:message>
+  <wsdl:message name="MoveMessageFolderSoapOut">
+    <wsdl:part name="parameters" element="tns:MoveMessageFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="MoveMessageFolderSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateReadFlagSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateReadFlag" />
+  </wsdl:message>
+  <wsdl:message name="UpdateReadFlagSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateReadFlagResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateReadFlagSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateNewFlagSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateNewFlag" />
+  </wsdl:message>
+  <wsdl:message name="UpdateNewFlagSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateNewFlagResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateNewFlagSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMessageFolderSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteMessageFolder" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMessageFolderSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteMessageFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMessageFolderSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:portType name="MessageServiceSoap">
+    <wsdl:operation name="GetMessagesForMessageFolder">
+      <wsdl:input message="tns:GetMessagesForMessageFolderSoapIn" />
+      <wsdl:output message="tns:GetMessagesForMessageFolderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <wsdl:input message="tns:SendMessageSoapIn" />
+      <wsdl:output message="tns:SendMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMessage">
+      <wsdl:input message="tns:DeleteMessageSoapIn" />
+      <wsdl:output message="tns:DeleteMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveMessage">
+      <wsdl:input message="tns:MoveMessageSoapIn" />
+      <wsdl:output message="tns:MoveMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRootMessageFolders">
+      <wsdl:input message="tns:GetRootMessageFoldersSoapIn" />
+      <wsdl:output message="tns:GetRootMessageFoldersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageFolders">
+      <wsdl:input message="tns:GetMessageFoldersSoapIn" />
+      <wsdl:output message="tns:GetMessageFoldersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecialMessageFolderForEmployee">
+      <wsdl:input message="tns:GetSpecialMessageFolderForEmployeeSoapIn" />
+      <wsdl:output message="tns:GetSpecialMessageFolderForEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageFolderDetail">
+      <wsdl:input message="tns:GetMessageFolderDetailSoapIn" />
+      <wsdl:output message="tns:GetMessageFolderDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateMessageFolder">
+      <wsdl:input message="tns:CreateMessageFolderSoapIn" />
+      <wsdl:output message="tns:CreateMessageFolderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMessageFolder">
+      <wsdl:input message="tns:UpdateMessageFolderSoapIn" />
+      <wsdl:output message="tns:UpdateMessageFolderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveMessageFolder">
+      <wsdl:input message="tns:MoveMessageFolderSoapIn" />
+      <wsdl:output message="tns:MoveMessageFolderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateReadFlag">
+      <wsdl:input message="tns:UpdateReadFlagSoapIn" />
+      <wsdl:output message="tns:UpdateReadFlagSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNewFlag">
+      <wsdl:input message="tns:UpdateNewFlagSoapIn" />
+      <wsdl:output message="tns:UpdateNewFlagSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMessageFolder">
+      <wsdl:input message="tns:DeleteMessageFolderSoapIn" />
+      <wsdl:output message="tns:DeleteMessageFolderSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MessageServiceSoap" type="tns:MessageServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMessagesForMessageFolder">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetMessagesForMessageFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMessagesForMessageFolderSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/SendMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SendMessageSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMessage">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/DeleteMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteMessageSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveMessage">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/MoveMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:MoveMessageSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRootMessageFolders">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetRootMessageFolders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRootMessageFoldersSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageFolders">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetMessageFolders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMessageFoldersSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecialMessageFolderForEmployee">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetSpecialMessageFolderForEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetSpecialMessageFolderForEmployeeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageFolderDetail">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetMessageFolderDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMessageFolderDetailSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateMessageFolder">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CreateMessageFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateMessageFolderSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMessageFolder">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateMessageFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateMessageFolderSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveMessageFolder">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/MoveMessageFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:MoveMessageFolderSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateReadFlag">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateReadFlag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateReadFlagSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNewFlag">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateNewFlag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateNewFlagSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMessageFolder">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/DeleteMessageFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteMessageFolderSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MessageServiceSoap12" type="tns:MessageServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMessagesForMessageFolder">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetMessagesForMessageFolder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMessagesForMessageFolderSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/SendMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SendMessageSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMessage">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/DeleteMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteMessageSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveMessage">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/MoveMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:MoveMessageSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRootMessageFolders">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetRootMessageFolders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRootMessageFoldersSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageFolders">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetMessageFolders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMessageFoldersSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecialMessageFolderForEmployee">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetSpecialMessageFolderForEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetSpecialMessageFolderForEmployeeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageFolderDetail">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetMessageFolderDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMessageFolderDetailSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateMessageFolder">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CreateMessageFolder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateMessageFolderSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMessageFolder">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateMessageFolder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateMessageFolderSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveMessageFolder">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/MoveMessageFolder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:MoveMessageFolderSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateReadFlag">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateReadFlag" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateReadFlagSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNewFlag">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateNewFlag" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateNewFlagSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMessageFolder">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/DeleteMessageFolder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteMessageFolderSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MessageService">
+    <wsdl:port name="MessageServiceSoap" binding="tns:MessageServiceSoap">
+      <soap:address location="http://localhost/SWMSuite.Facade.WebService/MessageService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MessageServiceSoap12" binding="tns:MessageServiceSoap12">
+      <soap12:address location="http://localhost/SWMSuite.Facade.WebService/MessageService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

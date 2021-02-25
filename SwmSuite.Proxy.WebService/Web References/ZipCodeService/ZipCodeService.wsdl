@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="SimpleWorkfloorManagementSuiteNameSpace" xmlns:s1="SwmSuite_v1" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="SimpleWorkfloorManagementSuiteNameSpace" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="SimpleWorkfloorManagementSuiteNameSpace">
+      <s:import namespace="SwmSuite_v1" />
+      <s:element name="GetZipCodes">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetZipCodesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetZipCodesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="ZipCode" nillable="true" type="s1:ZipCode" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SwmSuiteSoapHeader" type="tns:SwmSuiteSoapHeader" />
+      <s:complexType name="SwmSuiteSoapHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Employee" type="s:int" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetZipCodesByCountry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s1:Country" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZipCodesByCountryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetZipCodesByCountryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="ZipCode" nillable="true" type="s1:ZipCode" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZipCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sysId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZipCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetZipCodeResult" type="s1:ZipCode" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateZipCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zipcode" type="s1:ZipCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s1:Country" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateZipCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateZipCodeResult" type="s1:ZipCode" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateZipCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zipcode" type="s1:ZipCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s1:Country" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateZipCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateZipCodeResult" type="s1:ZipCode" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveZipCodes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zipcodes">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="ZipCode" nillable="true" type="s1:ZipCode" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveZipCodesResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="SwmSuite_v1">
+      <s:complexType name="ZipCode">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BusinessObjectBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SysId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowVersion" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Country">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetZipCodesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetZipCodes" />
+  </wsdl:message>
+  <wsdl:message name="GetZipCodesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetZipCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetZipCodesSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetZipCodesByCountrySoapIn">
+    <wsdl:part name="parameters" element="tns:GetZipCodesByCountry" />
+  </wsdl:message>
+  <wsdl:message name="GetZipCodesByCountrySoapOut">
+    <wsdl:part name="parameters" element="tns:GetZipCodesByCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetZipCodesByCountrySwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetZipCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetZipCode" />
+  </wsdl:message>
+  <wsdl:message name="GetZipCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetZipCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetZipCodeSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreateZipCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateZipCode" />
+  </wsdl:message>
+  <wsdl:message name="CreateZipCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateZipCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateZipCodeSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateZipCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateZipCode" />
+  </wsdl:message>
+  <wsdl:message name="UpdateZipCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateZipCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateZipCodeSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="RemoveZipCodesSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveZipCodes" />
+  </wsdl:message>
+  <wsdl:message name="RemoveZipCodesSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveZipCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveZipCodesSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:portType name="ZipCodeServiceSoap">
+    <wsdl:operation name="GetZipCodes">
+      <wsdl:input message="tns:GetZipCodesSoapIn" />
+      <wsdl:output message="tns:GetZipCodesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZipCodesByCountry">
+      <wsdl:input message="tns:GetZipCodesByCountrySoapIn" />
+      <wsdl:output message="tns:GetZipCodesByCountrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZipCode">
+      <wsdl:input message="tns:GetZipCodeSoapIn" />
+      <wsdl:output message="tns:GetZipCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateZipCode">
+      <wsdl:input message="tns:CreateZipCodeSoapIn" />
+      <wsdl:output message="tns:CreateZipCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateZipCode">
+      <wsdl:input message="tns:UpdateZipCodeSoapIn" />
+      <wsdl:output message="tns:UpdateZipCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveZipCodes">
+      <wsdl:input message="tns:RemoveZipCodesSoapIn" />
+      <wsdl:output message="tns:RemoveZipCodesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZipCodeServiceSoap" type="tns:ZipCodeServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetZipCodes">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetZipCodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetZipCodesSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZipCodesByCountry">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetZipCodesByCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetZipCodesByCountrySwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZipCode">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetZipCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetZipCodeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateZipCode">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CreateZipCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateZipCodeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateZipCode">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateZipCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateZipCodeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveZipCodes">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/RemoveZipCodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RemoveZipCodesSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ZipCodeServiceSoap12" type="tns:ZipCodeServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetZipCodes">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetZipCodes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetZipCodesSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZipCodesByCountry">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetZipCodesByCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetZipCodesByCountrySwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZipCode">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetZipCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetZipCodeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateZipCode">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CreateZipCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateZipCodeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateZipCode">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateZipCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateZipCodeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveZipCodes">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/RemoveZipCodes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RemoveZipCodesSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZipCodeService">
+    <wsdl:port name="ZipCodeServiceSoap" binding="tns:ZipCodeServiceSoap">
+      <soap:address location="http://localhost/SWMSuite.Facade.WebService/ZipCodeService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ZipCodeServiceSoap12" binding="tns:ZipCodeServiceSoap12">
+      <soap12:address location="http://localhost/SWMSuite.Facade.WebService/ZipCodeService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

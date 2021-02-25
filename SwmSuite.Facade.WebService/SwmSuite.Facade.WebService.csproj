@@ -1,0 +1,217 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6E2EE0CF-364D-46A4-9878-E82F84C2C370}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SwmSuite.Facade.WebService</RootNamespace>
+    <AssemblyName>SwmSuite.Facade.WebService</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <OutputType>Library</OutputType>
+    <AssemblyName>SwmSuite.Facade.WebService</AssemblyName>
+    <RootNamespace>SwmSuite.Facade.WebService</RootNamespace>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <DocumentationFile>..\bin\Debug\SwmSuite.Facade.WebService.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <OutputType>Library</OutputType>
+    <AssemblyName>SwmSuite.Facade.WebService</AssemblyName>
+    <DebugSymbols>true</DebugSymbols>
+    <RootNamespace>SwmSuite.Facade.WebService</RootNamespace>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AgendaService.asmx" />
+    <Content Include="AlertService.asmx" />
+    <Content Include="AvatarService.asmx" />
+    <Content Include="ConnectionTestService.asmx" />
+    <Content Include="CountryService.asmx" />
+    <Content Include="EmployeeService.asmx" />
+    <Content Include="HolidayService.asmx" />
+    <Content Include="LoggingService.asmx" />
+    <Content Include="MessageService.asmx" />
+    <Content Include="TaskService.asmx" />
+    <Content Include="TimeTableService.asmx" />
+    <Content Include="UserService.asmx" />
+    <Content Include="Web.config" />
+    <Content Include="ZipCodeService.asmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgendaService.asmx.cs">
+      <DependentUpon>AgendaService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AlertService.asmx.cs">
+      <DependentUpon>AlertService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AvatarService.asmx.cs">
+      <DependentUpon>AvatarService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ConnectionTestService.asmx.cs">
+      <DependentUpon>ConnectionTestService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CountryService.asmx.cs">
+      <DependentUpon>CountryService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EmployeeService.asmx.cs">
+      <DependentUpon>EmployeeService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HolidayService.asmx.cs">
+      <DependentUpon>HolidayService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LoggingService.asmx.cs">
+      <DependentUpon>LoggingService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MessageService.asmx.cs">
+      <DependentUpon>MessageService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SWMSuiteHttpModule.cs" />
+    <Compile Include="SWMSuiteSoapHeader.cs" />
+    <Compile Include="TaskService.asmx.cs">
+      <DependentUpon>TaskService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TimeTableService.asmx.cs">
+      <DependentUpon>TimeTableService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserService.asmx.cs">
+      <DependentUpon>UserService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServerAuthentication.cs" />
+    <Compile Include="ZipCodeService.asmx.cs">
+      <DependentUpon>ZipCodeService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SWMSuite.Business\SwmSuite.Business.csproj">
+      <Project>{2F58EE63-A226-4E2B-9F8D-AD49C6EF3C84}</Project>
+      <Name>SwmSuite.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SwmSuite.Data.Common\SwmSuite.Data.Common.csproj">
+      <Project>{E35CC450-D0C1-45C5-9BB0-2D1BE871CD98}</Project>
+      <Name>SwmSuite.Data.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWMSuite.DataAccess.NHibernate\SwmSuite.DataAccess.NHibernate.csproj">
+      <Project>{07788199-6F84-4532-BC86-C7033FF6A277}</Project>
+      <Name>SwmSuite.DataAccess.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWMSuite.DataAccess.Sql\SwmSuite.DataAccess.Sql.csproj">
+      <Project>{4B1B3B2E-5972-4A6E-814B-6E043348C2A1}</Project>
+      <Name>SwmSuite.DataAccess.Sql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SwmSuite.Framework.BusinessObjects\SwmSuite.Data.BusinessObjects.csproj">
+      <Project>{D06DC017-74A1-4B63-82BC-7019B9C6333B}</Project>
+      <Name>SwmSuite.Data.BusinessObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWMSuite.Framework\SwmSuite.Framework.csproj">
+      <Project>{948A5F7B-C897-4A4D-8B0C-EE52B026B186}</Project>
+      <Name>SwmSuite.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWMSuite.Proxy.Interface\SwmSuite.Proxy.Interface.csproj">
+      <Project>{F570BBB9-CFFD-49E0-80E2-3031C8D7F10F}</Project>
+      <Name>SwmSuite.Proxy.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>49351</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

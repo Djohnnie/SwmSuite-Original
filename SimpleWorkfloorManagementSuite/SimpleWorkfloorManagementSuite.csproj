@@ -1,0 +1,1159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{25BC0E6D-23A3-48F8-9D76-EA4B538D6A79}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SimpleWorkfloorManagementSuite</RootNamespace>
+    <AssemblyName>SimpleWorkfloorManagementSuite</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>SimpleWorkfloorManagementSuite</AssemblyName>
+    <RootNamespace>SimpleWorkfloorManagementSuite</RootNamespace>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <DocumentationFile>..\bin\Debug\SimpleWorkfloorManagementSuite.XML</DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>SimpleWorkfloorManagementSuite</AssemblyName>
+    <DebugSymbols>true</DebugSymbols>
+    <RootNamespace>SimpleWorkfloorManagementSuite</RootNamespace>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SWMSuite.Presentation.Drawing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SWMSuite.Presentation.Drawing\bin\Debug\SWMSuite.Presentation.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConnectionWizard\ConnectionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnectionWizard\ConnectionDialog.Designer.cs">
+      <DependentUpon>ConnectionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectionWizard\ProxyConfigurationDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnectionWizard\ProxyConfigurationDialog.Designer.cs">
+      <DependentUpon>ProxyConfigurationDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectionWizard\SqlServerConnectionStringDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnectionWizard\SqlServerConnectionStringDialog.Designer.cs">
+      <DependentUpon>SqlServerConnectionStringDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AgendaSelectorButton.cs" />
+    <Compile Include="Controls\AgendaSelectorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AgendaSelectorControl.Designer.cs">
+      <DependentUpon>AgendaSelectorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AgendaSelectorRenderer.cs" />
+    <Compile Include="Controls\AgendaSelectorScheme.cs" />
+    <Compile Include="Controls\CheckListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CheckListControl.Designer.cs">
+      <DependentUpon>CheckListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CheckListItem.cs" />
+    <Compile Include="Controls\CheckListItemCollection.cs" />
+    <Compile Include="Controls\CheckListItemEventArgs.cs" />
+    <Compile Include="Controls\LoginGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LoginGroup.Designer.cs">
+      <DependentUpon>LoginGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LoginGroupLoginEventArgs.cs" />
+    <Compile Include="Controls\MessageContentsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MessageContentsControl.Designer.cs">
+      <DependentUpon>MessageContentsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MessageContentsRenderer.cs" />
+    <Compile Include="Controls\MessageContentsScheme.cs" />
+    <Compile Include="Controls\MessageRichTextEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MessageRichTextEditor.Designer.cs">
+      <DependentUpon>MessageRichTextEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OvertimeBrowserViewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\OvertimeBrowserViewControl.Designer.cs">
+      <DependentUpon>OvertimeBrowserViewControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OvertimeDetailControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\OvertimeDetailControl.Designer.cs">
+      <DependentUpon>OvertimeDetailControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SelectedOvertimeEntryChangedEventArgs.cs" />
+    <Compile Include="Controls\SelectedTaskChangedEventArgs.cs" />
+    <Compile Include="Controls\TaskBrowserViewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TaskBrowserViewControl.Designer.cs">
+      <DependentUpon>TaskBrowserViewControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TaskContentsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TaskContentsControl.Designer.cs">
+      <DependentUpon>TaskContentsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TaskContentsRenderer.cs" />
+    <Compile Include="Controls\TaskContentsScheme.cs" />
+    <Compile Include="Controls\TaskDetailControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TaskDetailControl.Designer.cs">
+      <DependentUpon>TaskDetailControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TimeTableEntriesBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\WelcomeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\WelcomeControl.Designer.cs">
+      <DependentUpon>WelcomeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AboutDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AboutDialog.Designer.cs">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AgendaDetailDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AgendaDetailDialog.Designer.cs">
+      <DependentUpon>AgendaDetailDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AgendaManagementDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AgendaManagementDialog.Designer.cs">
+      <DependentUpon>AgendaManagementDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AgendaVisibilityDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AgendaVisibilityDialog.Designer.cs">
+      <DependentUpon>AgendaVisibilityDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AlertDetailDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AlertDetailDialog.Designer.cs">
+      <DependentUpon>AlertDetailDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AppointmentDetailDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AppointmentDetailDialog.Designer.cs">
+      <DependentUpon>AppointmentDetailDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\BrowseForAgendaDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\BrowseForAgendaDialog.Designer.cs">
+      <DependentUpon>BrowseForAgendaDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\BrowseForSingleEmployeeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\BrowseForSingleEmployeeDialog.Designer.cs">
+      <DependentUpon>BrowseForSingleEmployeeDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\BrowseForTimeTablePurposeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\BrowseForTimeTablePurposeDialog.Designer.cs">
+      <DependentUpon>BrowseForTimeTablePurposeDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\BrowserForEmployeeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\BrowserForEmployeeDialog.Designer.cs">
+      <DependentUpon>BrowserForEmployeeDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\BrowserForEmployeeGroupDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\BrowserForEmployeeGroupDialog.Designer.cs">
+      <DependentUpon>BrowserForEmployeeGroupDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ColorSelectionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ColorSelectionDialog.Designer.cs">
+      <DependentUpon>ColorSelectionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ExceptionSendDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ExceptionSendDialog.Designer.cs">
+      <DependentUpon>ExceptionSendDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\TimeTableTemplateEntryDetailDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\TimeTableTemplateEntryDetailDialog.Designer.cs">
+      <DependentUpon>TimeTableTemplateEntryDetailDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\TimeTableTemplateEntryManagementDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\TimeTableTemplateEntryManagementDialog.Designer.cs">
+      <DependentUpon>TimeTableTemplateEntryManagementDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\EmployeeDetailDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\EmployeeDetailDialog.Designer.cs">
+      <DependentUpon>EmployeeDetailDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\EmployeeGroupDetailDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\EmployeeGroupDetailDialog.Designer.cs">
+      <DependentUpon>EmployeeGroupDetailDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\TaskRunDetailDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\TaskRunDetailDialog.Designer.cs">
+      <DependentUpon>TaskRunDetailDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ErrorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ErrorDialog.Designer.cs">
+      <DependentUpon>ErrorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ExceptionDetailDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ExceptionDetailDialog.Designer.cs">
+      <DependentUpon>ExceptionDetailDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ExceptionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ExceptionDialog.Designer.cs">
+      <DependentUpon>ExceptionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ExceptionDialogResult.cs" />
+    <Compile Include="Dialogs\HolidayDefinitionManagementDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\HolidayDefinitionManagementDialog.Designer.cs">
+      <DependentUpon>HolidayDefinitionManagementDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\LogoutNotificationDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\LogoutNotificationDialog.Designer.cs">
+      <DependentUpon>LogoutNotificationDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\MessageFolderDetailDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\MessageFolderDetailDialog.Designer.cs">
+      <DependentUpon>MessageFolderDetailDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\MoveMessageDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\MoveMessageDialog.Designer.cs">
+      <DependentUpon>MoveMessageDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\MessageDetailDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\MessageDetailDialog.Designer.cs">
+      <DependentUpon>MessageDetailDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\OvertimeEntryDetailDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\OvertimeEntryDetailDialog.Designer.cs">
+      <DependentUpon>OvertimeEntryDetailDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\QueryDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\QueryDialog.Designer.cs">
+      <DependentUpon>QueryDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\RecurrenceDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\RecurrenceDialog.Designer.cs">
+      <DependentUpon>RecurrenceDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ScreenResolutionWarningDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ScreenResolutionWarningDialog.Designer.cs">
+      <DependentUpon>ScreenResolutionWarningDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SendMailTestResultDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SendMailTestResultDialog.Designer.cs">
+      <DependentUpon>SendMailTestResultDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\TaskDetailDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\TaskDetailDialog.Designer.cs">
+      <DependentUpon>TaskDetailDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\TimeTableEntryManagementDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\TimeTableEntryManagementDialog.Designer.cs">
+      <DependentUpon>TimeTableEntryManagementDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\TimeTableEntryDetailDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\TimeTableEntryDetailDialog.Designer.cs">
+      <DependentUpon>TimeTableEntryDetailDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\TimeTablePurposeDetailDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\TimeTablePurposeDetailDialog.Designer.cs">
+      <DependentUpon>TimeTablePurposeDetailDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\TimeTablePurposeManagementDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\TimeTablePurposeManagementDialog.Designer.cs">
+      <DependentUpon>TimeTablePurposeManagementDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\TimeTableTemplateDetailDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\TimeTableTemplateDetailDialog.Designer.cs">
+      <DependentUpon>TimeTableTemplateDetailDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\TimeTableTemplateManagementDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\TimeTableTemplateManagementDialog.Designer.cs">
+      <DependentUpon>TimeTableTemplateManagementDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\TimeTableTemplateSelectionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\TimeTableTemplateSelectionDialog.Designer.cs">
+      <DependentUpon>TimeTableTemplateSelectionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\UserPasswordDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\UserPasswordDialog.Designer.cs">
+      <DependentUpon>UserPasswordDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\UserSettingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\UserSettingsDialog.Designer.cs">
+      <DependentUpon>UserSettingsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogOnForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogOnForm.Designer.cs">
+      <DependentUpon>LogOnForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\AgendaModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\AgendaModule.Designer.cs">
+      <DependentUpon>AgendaModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\AlertManagementModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\AlertManagementModule.Designer.cs">
+      <DependentUpon>AlertManagementModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\LoggingModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\LoggingModule.Designer.cs">
+      <DependentUpon>LoggingModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\PersonalManagementModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\PersonalManagementModule.Designer.cs">
+      <DependentUpon>PersonalManagementModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\StaffManagementModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\StaffManagementModule.Designer.cs">
+      <DependentUpon>StaffManagementModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HolidayManagementModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\HolidayManagementModule.Designer.cs">
+      <DependentUpon>HolidayManagementModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HolidayModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\HolidayModule.Designer.cs">
+      <DependentUpon>HolidayModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HomeModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\HomeModule.Designer.cs">
+      <DependentUpon>HomeModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MainMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MessageModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\MessageModule.Designer.cs">
+      <DependentUpon>MessageModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Notification\AgendaNotification.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Notification\AgendaNotification.Designer.cs">
+      <DependentUpon>AgendaNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Notification\HolidayNotification.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Notification\HolidayNotification.Designer.cs">
+      <DependentUpon>HolidayNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Notification\MessageNotification.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Notification\MessageNotification.Designer.cs">
+      <DependentUpon>MessageNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Notification\NotificationDrawer.cs" />
+    <Compile Include="Modules\Notification\NotificationScheme.cs" />
+    <Compile Include="Modules\Notification\TaskNotification.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Notification\TaskNotification.Designer.cs">
+      <DependentUpon>TaskNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Notification\TimeTableNotification.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Notification\TimeTableNotification.Designer.cs">
+      <DependentUpon>TimeTableNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TaskManagementModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\TaskManagementModule.Designer.cs">
+      <DependentUpon>TaskManagementModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TaskModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\TaskModule.Designer.cs">
+      <DependentUpon>TaskModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TimeTableManagementModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\TimeTableManagementModule.Designer.cs">
+      <DependentUpon>TimeTableManagementModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TimeTableModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\TimeTableModule.Designer.cs">
+      <DependentUpon>TimeTableModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ConnectionWizard\ConnectionDialog.resx">
+      <DependentUpon>ConnectionDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConnectionWizard\ProxyConfigurationDialog.resx">
+      <DependentUpon>ProxyConfigurationDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConnectionWizard\SqlServerConnectionStringDialog.resx">
+      <DependentUpon>SqlServerConnectionStringDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AgendaSelectorControl.resx">
+      <DependentUpon>AgendaSelectorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CheckListControl.resx">
+      <DependentUpon>CheckListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LoginGroup.resx">
+      <DependentUpon>LoginGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MessageContentsControl.resx">
+      <DependentUpon>MessageContentsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MessageRichTextEditor.resx">
+      <DependentUpon>MessageRichTextEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OvertimeBrowserViewControl.resx">
+      <DependentUpon>OvertimeBrowserViewControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OvertimeDetailControl.resx">
+      <DependentUpon>OvertimeDetailControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TaskBrowserViewControl.resx">
+      <DependentUpon>TaskBrowserViewControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TaskContentsControl.resx">
+      <DependentUpon>TaskContentsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TaskDetailControl.resx">
+      <DependentUpon>TaskDetailControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TimeTableEntriesBrowser.resx">
+      <DependentUpon>TimeTableEntriesBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\WelcomeControl.resx">
+      <DependentUpon>WelcomeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AboutDialog.resx">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AgendaDetailDialog.resx">
+      <DependentUpon>AgendaDetailDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AgendaManagementDialog.resx">
+      <DependentUpon>AgendaManagementDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AgendaVisibilityDialog.resx">
+      <DependentUpon>AgendaVisibilityDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AlertDetailDialog.resx">
+      <DependentUpon>AlertDetailDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AppointmentDetailDialog.resx">
+      <DependentUpon>AppointmentDetailDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\BrowseForAgendaDialog.resx">
+      <DependentUpon>BrowseForAgendaDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\BrowseForSingleEmployeeDialog.resx">
+      <DependentUpon>BrowseForSingleEmployeeDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\BrowseForTimeTablePurposeDialog.resx">
+      <DependentUpon>BrowseForTimeTablePurposeDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\BrowserForEmployeeDialog.resx">
+      <DependentUpon>BrowserForEmployeeDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\BrowserForEmployeeGroupDialog.resx">
+      <DependentUpon>BrowserForEmployeeGroupDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ColorSelectionDialog.resx">
+      <DependentUpon>ColorSelectionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ExceptionSendDialog.resx">
+      <DependentUpon>ExceptionSendDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TimeTableTemplateEntryDetailDialog.resx">
+      <DependentUpon>TimeTableTemplateEntryDetailDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TimeTableTemplateEntryManagementDialog.resx">
+      <DependentUpon>TimeTableTemplateEntryManagementDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\EmployeeDetailDialog.resx">
+      <DependentUpon>EmployeeDetailDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\EmployeeGroupDetailDialog.resx">
+      <DependentUpon>EmployeeGroupDetailDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TaskRunDetailDialog.resx">
+      <DependentUpon>TaskRunDetailDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ErrorDialog.resx">
+      <DependentUpon>ErrorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ExceptionDetailDialog.resx">
+      <DependentUpon>ExceptionDetailDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ExceptionDialog.resx">
+      <DependentUpon>ExceptionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\HolidayDefinitionManagementDialog.resx">
+      <DependentUpon>HolidayDefinitionManagementDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\LogoutNotificationDialog.resx">
+      <DependentUpon>LogoutNotificationDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\MessageFolderDetailDialog.resx">
+      <DependentUpon>MessageFolderDetailDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\MoveMessageDialog.resx">
+      <DependentUpon>MoveMessageDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\MessageDetailDialog.resx">
+      <DependentUpon>MessageDetailDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\OvertimeEntryDetailDialog.resx">
+      <DependentUpon>OvertimeEntryDetailDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\QueryDialog.resx">
+      <DependentUpon>QueryDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\RecurrenceDialog.resx">
+      <DependentUpon>RecurrenceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ScreenResolutionWarningDialog.resx">
+      <DependentUpon>ScreenResolutionWarningDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SendMailTestResultDialog.resx">
+      <DependentUpon>SendMailTestResultDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TaskDetailDialog.resx">
+      <DependentUpon>TaskDetailDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TimeTableEntryManagementDialog.resx">
+      <DependentUpon>TimeTableEntryManagementDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TimeTableEntryDetailDialog.resx">
+      <DependentUpon>TimeTableEntryDetailDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TimeTablePurposeDetailDialog.resx">
+      <DependentUpon>TimeTablePurposeDetailDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TimeTablePurposeManagementDialog.resx">
+      <DependentUpon>TimeTablePurposeManagementDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TimeTableTemplateDetailDialog.resx">
+      <DependentUpon>TimeTableTemplateDetailDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TimeTableTemplateManagementDialog.resx">
+      <DependentUpon>TimeTableTemplateManagementDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TimeTableTemplateSelectionDialog.resx">
+      <DependentUpon>TimeTableTemplateSelectionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\UserPasswordDialog.resx">
+      <DependentUpon>UserPasswordDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\UserSettingsDialog.resx">
+      <DependentUpon>UserSettingsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogOnForm.resx">
+      <DependentUpon>LogOnForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\AgendaModule.resx">
+      <DependentUpon>AgendaModule.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\AlertManagementModule.resx">
+      <DependentUpon>AlertManagementModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\LoggingModule.resx">
+      <DependentUpon>LoggingModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\PersonalManagementModule.resx">
+      <DependentUpon>PersonalManagementModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\StaffManagementModule.resx">
+      <DependentUpon>StaffManagementModule.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HolidayManagementModule.resx">
+      <DependentUpon>HolidayManagementModule.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HolidayModule.resx">
+      <DependentUpon>HolidayModule.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HomeModule.resx">
+      <DependentUpon>HomeModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\MessageModule.resx">
+      <DependentUpon>MessageModule.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Notification\AgendaNotification.resx">
+      <DependentUpon>AgendaNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Notification\HolidayNotification.resx">
+      <DependentUpon>HolidayNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Notification\MessageNotification.resx">
+      <DependentUpon>MessageNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Notification\TaskNotification.resx">
+      <DependentUpon>TaskNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Notification\TimeTableNotification.resx">
+      <DependentUpon>TimeTableNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\TaskManagementModule.resx">
+      <DependentUpon>TaskManagementModule.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\TaskModule.resx">
+      <DependentUpon>TaskModule.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\TimeTableManagementModule.resx">
+      <DependentUpon>TimeTableManagementModule.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\TimeTableModule.resx">
+      <DependentUpon>TimeTableModule.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\ScreenSaver.resx">
+      <DependentUpon>ScreenSaver.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashForm.resx">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWMSuiteAdminWizard\SWMSuiteAdminWizardContent3.resx">
+      <DependentUpon>SWMSuiteAdminWizardContent3.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWMSuiteAdminWizard\SWMSuiteAdminWizardContent5.resx">
+      <DependentUpon>SWMSuiteAdminWizardContent5.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWMSuiteAdminWizard\SWMSuiteAdminWizardContent4.resx">
+      <DependentUpon>SWMSuiteAdminWizardContent4.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWMSuiteAdminWizard\SWMSuiteAdminWizardContent1.resx">
+      <DependentUpon>SWMSuiteAdminWizardContent1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWMSuiteAdminWizard\SWMSuiteAdminWizardContent2.resx">
+      <DependentUpon>SWMSuiteAdminWizardContent2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SWMSuiteAdminWizard\SWMSuiteAdminWizardForm.resx">
+      <DependentUpon>SWMSuiteAdminWizardForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Screens\ScreenSaver.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\ScreenSaver.Designer.cs">
+      <DependentUpon>ScreenSaver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SplashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashForm.Designer.cs">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SWMSuiteAdminWizard\SWMSuiteAdminWizardContent3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SWMSuiteAdminWizard\SWMSuiteAdminWizardContent3.Designer.cs">
+      <DependentUpon>SWMSuiteAdminWizardContent3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SWMSuiteAdminWizard\SWMSuiteAdminWizardContent5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SWMSuiteAdminWizard\SWMSuiteAdminWizardContent5.Designer.cs">
+      <DependentUpon>SWMSuiteAdminWizardContent5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SWMSuiteAdminWizard\SWMSuiteAdminWizardContent4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SWMSuiteAdminWizard\SWMSuiteAdminWizardContent4.Designer.cs">
+      <DependentUpon>SWMSuiteAdminWizardContent4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SWMSuiteAdminWizard\SWMSuiteAdminWizardContent1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SWMSuiteAdminWizard\SWMSuiteAdminWizardContent1.Designer.cs">
+      <DependentUpon>SWMSuiteAdminWizardContent1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SWMSuiteAdminWizard\SWMSuiteAdminWizardContent2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SWMSuiteAdminWizard\SWMSuiteAdminWizardContent2.Designer.cs">
+      <DependentUpon>SWMSuiteAdminWizardContent2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SWMSuiteAdminWizard\SWMSuiteAdminWizardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SWMSuiteAdminWizard\SWMSuiteAdminWizardForm.Designer.cs">
+      <DependentUpon>SWMSuiteAdminWizardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SWMSuiteLogOn.cs" />
+    <Compile Include="SWMSuiteLogOnProblems.cs" />
+    <Compile Include="SwmSuiteMembershipProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SwmSuite.Data.Common\SwmSuite.Data.Common.csproj">
+      <Project>{E35CC450-D0C1-45C5-9BB0-2D1BE871CD98}</Project>
+      <Name>SwmSuite.Data.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SwmSuite.Framework.BusinessObjects\SwmSuite.Data.BusinessObjects.csproj">
+      <Project>{D06DC017-74A1-4B63-82BC-7019B9C6333B}</Project>
+      <Name>SwmSuite.Data.BusinessObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWMSuite.Framework\SwmSuite.Framework.csproj">
+      <Project>{948A5F7B-C897-4A4D-8B0C-EE52B026B186}</Project>
+      <Name>SwmSuite.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWMSuite.Presentation.Common\SwmSuite.Presentation.Common.csproj">
+      <Project>{86C17954-908E-4449-9F41-53102DE7812E}</Project>
+      <Name>SwmSuite.Presentation.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWMSuite.Proxy.Interface\SwmSuite.Proxy.Interface.csproj">
+      <Project>{F570BBB9-CFFD-49E0-80E2-3031C8D7F10F}</Project>
+      <Name>SwmSuite.Proxy.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wizard_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wizard_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agenda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\berichten.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eigen_beheer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\taken.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uurrooster.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\verlof.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reply.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\action_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\action_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cut.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Copy.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Paste.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bold.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Italic.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlignTableCellMiddleLeftJust.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlignTableCellMiddleCenter.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlignTableCellMiddleRight.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\List_Bullets.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Color_font.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LineColor.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_message.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reply_message.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_message.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_message.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agenda_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agenda_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Appointments.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\task_pending.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tasks_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tasks_all.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tasks_finished.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tasks_overdue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tasks_finished1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logboek.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next_year.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\previous_year.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+    <None Include="Resources\calendar_7_241.png" />
+    <None Include="Resources\calendar_1_241.png" />
+    <None Include="Resources\uurrooster_241.png" />
+    <None Include="Resources\sjabloon_24.png" />
+    <None Include="Resources\categorieen_24.png" />
+    <None Include="Resources\bezetting_241.png" />
+    <None Include="Resources\uurrooster_24.png" />
+    <None Include="Resources\bezetting_24.png" />
+    <None Include="Resources\agenda_edit.png" />
+    <None Include="Resources\agenda_delete.png" />
+    <None Include="Resources\agenda_add.png" />
+    <None Include="Resources\agendas.png" />
+    <None Include="Resources\calendar_7_24.png" />
+    <None Include="Resources\calendar_1_24.png" />
+    <None Include="Resources\task_check.png" />
+    <None Include="Resources\overtime_deny.png" />
+    <None Include="Resources\overtime_accept.png" />
+    <None Include="Resources\overtime_add.png" />
+    <None Include="Resources\overtime.png" />
+    <None Include="Resources\underline.png" />
+    <None Include="Resources\icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

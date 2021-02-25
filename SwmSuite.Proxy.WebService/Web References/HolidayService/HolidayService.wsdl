@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="SimpleWorkfloorManagementSuiteNameSpace" xmlns:s1="SwmSuite_v1" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s2="http://microsoft.com/wsdl/types/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="SimpleWorkfloorManagementSuiteNameSpace" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="SimpleWorkfloorManagementSuiteNameSpace">
+      <s:import namespace="SwmSuite_v1" />
+      <s:element name="GetOvertimeEntries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employees">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="Employee" nillable="true" type="s1:Employee" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="year" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOvertimeEntriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOvertimeEntriesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="OvertimeEntry" nillable="true" type="s1:OvertimeEntry" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SwmSuiteSoapHeader" type="tns:SwmSuiteSoapHeader" />
+      <s:complexType name="SwmSuiteSoapHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Employee" type="s:int" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="CreateOvertimeEntry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="overtimeEntry" type="s1:OvertimeEntry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateOvertimeEntryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateOvertimeEntryResult" type="s1:OvertimeEntry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOvertimeEntry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="overtimeEntry" type="s1:OvertimeEntry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOvertimeEntryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateOvertimeEntryResult" type="s1:OvertimeEntry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AcceptOvertimeEntry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="overtimeEntry" type="s1:OvertimeEntry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AcceptOvertimeEntryResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DenyOvertimeEntry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="overtimeEntry" type="s1:OvertimeEntry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DenyOvertimeEntryResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="SwmSuite_v1">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:complexType name="Employee">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="UserSysId" type="s2:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s1:ZipCode" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrivatePhoneNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="WorkPhoneNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CellPhoneNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress3" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress4" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress5" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Avatar" type="s1:Avatar" />
+              <s:element minOccurs="0" maxOccurs="1" name="Settings" type="s1:EmployeeSettings" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Administrator" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BusinessObjectBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SysId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowVersion" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OvertimeEntry">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DateTimeStart" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="DateTimeEnd" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="Employee" type="s1:Employee" />
+              <s:element minOccurs="1" maxOccurs="1" name="OvertimeStatus" type="s1:OvertimeStatus" />
+              <s:element minOccurs="0" maxOccurs="1" name="Commissioner" type="s1:Employee" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="OvertimeStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="Pending" />
+          <s:enumeration value="Accepted" />
+          <s:enumeration value="Denied" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="EmployeeSettings">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="AutoLogon" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="AutoLogonHost" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="LogoutTimeout" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="EmailNotification" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SmtpServer" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="SmtpPort" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="SecureConnection" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="Authentication" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Avatar">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Picture" type="s:base64Binary" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ZipCode">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetOvertimeEntriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOvertimeEntries" />
+  </wsdl:message>
+  <wsdl:message name="GetOvertimeEntriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOvertimeEntriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOvertimeEntriesSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreateOvertimeEntrySoapIn">
+    <wsdl:part name="parameters" element="tns:CreateOvertimeEntry" />
+  </wsdl:message>
+  <wsdl:message name="CreateOvertimeEntrySoapOut">
+    <wsdl:part name="parameters" element="tns:CreateOvertimeEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateOvertimeEntrySwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOvertimeEntrySoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOvertimeEntry" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOvertimeEntrySoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOvertimeEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOvertimeEntrySwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="AcceptOvertimeEntrySoapIn">
+    <wsdl:part name="parameters" element="tns:AcceptOvertimeEntry" />
+  </wsdl:message>
+  <wsdl:message name="AcceptOvertimeEntrySoapOut">
+    <wsdl:part name="parameters" element="tns:AcceptOvertimeEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="AcceptOvertimeEntrySwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="DenyOvertimeEntrySoapIn">
+    <wsdl:part name="parameters" element="tns:DenyOvertimeEntry" />
+  </wsdl:message>
+  <wsdl:message name="DenyOvertimeEntrySoapOut">
+    <wsdl:part name="parameters" element="tns:DenyOvertimeEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="DenyOvertimeEntrySwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:portType name="HolidayServiceSoap">
+    <wsdl:operation name="GetOvertimeEntries">
+      <wsdl:input message="tns:GetOvertimeEntriesSoapIn" />
+      <wsdl:output message="tns:GetOvertimeEntriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOvertimeEntry">
+      <wsdl:input message="tns:CreateOvertimeEntrySoapIn" />
+      <wsdl:output message="tns:CreateOvertimeEntrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOvertimeEntry">
+      <wsdl:input message="tns:UpdateOvertimeEntrySoapIn" />
+      <wsdl:output message="tns:UpdateOvertimeEntrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AcceptOvertimeEntry">
+      <wsdl:input message="tns:AcceptOvertimeEntrySoapIn" />
+      <wsdl:output message="tns:AcceptOvertimeEntrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DenyOvertimeEntry">
+      <wsdl:input message="tns:DenyOvertimeEntrySoapIn" />
+      <wsdl:output message="tns:DenyOvertimeEntrySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HolidayServiceSoap" type="tns:HolidayServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetOvertimeEntries">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetOvertimeEntries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetOvertimeEntriesSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOvertimeEntry">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CreateOvertimeEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateOvertimeEntrySwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOvertimeEntry">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateOvertimeEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateOvertimeEntrySwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptOvertimeEntry">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/AcceptOvertimeEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AcceptOvertimeEntrySwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DenyOvertimeEntry">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/DenyOvertimeEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DenyOvertimeEntrySwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="HolidayServiceSoap12" type="tns:HolidayServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetOvertimeEntries">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetOvertimeEntries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetOvertimeEntriesSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOvertimeEntry">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CreateOvertimeEntry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateOvertimeEntrySwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOvertimeEntry">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateOvertimeEntry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateOvertimeEntrySwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptOvertimeEntry">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/AcceptOvertimeEntry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AcceptOvertimeEntrySwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DenyOvertimeEntry">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/DenyOvertimeEntry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DenyOvertimeEntrySwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HolidayService">
+    <wsdl:port name="HolidayServiceSoap" binding="tns:HolidayServiceSoap">
+      <soap:address location="http://localhost/SWMSuite.Facade.WebService/HolidayService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="HolidayServiceSoap12" binding="tns:HolidayServiceSoap12">
+      <soap12:address location="http://localhost/SWMSuite.Facade.WebService/HolidayService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

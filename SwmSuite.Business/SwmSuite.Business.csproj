@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2F58EE63-A226-4E2B-9F8D-AD49C6EF3C84}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SwmSuite.Business</RootNamespace>
+    <AssemblyName>SwmSuite.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <OutputType>Library</OutputType>
+    <AssemblyName>SwmSuite.Business</AssemblyName>
+    <RootNamespace>SwmSuite.Business</RootNamespace>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <DocumentationFile>..\bin\Debug\SwmSuite.Business.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <OutputType>Library</OutputType>
+    <AssemblyName>SwmSuite.Business</AssemblyName>
+    <DebugSymbols>true</DebugSymbols>
+    <RootNamespace>SwmSuite.Business</RootNamespace>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgendaBll.cs" />
+    <Compile Include="AppointmentBll.cs" />
+    <Compile Include="AppointmentGuestBll.cs" />
+    <Compile Include="AppointmentRecurrenceBll.cs" />
+    <Compile Include="AlertBll.cs" />
+    <Compile Include="ConnectionLogBll.cs" />
+    <Compile Include="ConnectionTestBll.cs" />
+    <Compile Include="DataMapping\AgendaMapping.cs" />
+    <Compile Include="DataMapping\AlertMapping.cs" />
+    <Compile Include="DataMapping\AppointmentGuestMapping.cs" />
+    <Compile Include="DataMapping\AppointmentMapping.cs" />
+    <Compile Include="DataMapping\AppointmentRecurrenceMapping.cs" />
+    <Compile Include="DataMapping\AvatarMapping.cs" />
+    <Compile Include="DataMapping\ConnectionLogMapping.cs" />
+    <Compile Include="DataMapping\CountryMapping.cs" />
+    <Compile Include="DataMapping\EmployeeAlertMapping.cs" />
+    <Compile Include="DataMapping\EmployeeGroupAlertMapping.cs" />
+    <Compile Include="DataMapping\EmployeeGroupMapping.cs" />
+    <Compile Include="DataMapping\EmployeeMapping.cs" />
+    <Compile Include="DataMapping\EmployeeSettingsMapping.cs" />
+    <Compile Include="DataMapping\HolidayDefinitionMapping.cs" />
+    <Compile Include="DataMapping\LoginLogMapping.cs" />
+    <Compile Include="DataMapping\Mapping.cs" />
+    <Compile Include="DataMapping\MessageFolderMapping.cs" />
+    <Compile Include="DataMapping\MessageMapping.cs" />
+    <Compile Include="DataMapping\OvertimeMapping.cs" />
+    <Compile Include="DataMapping\RecurrenceMapping.cs" />
+    <Compile Include="DataMapping\TaskMapping.cs" />
+    <Compile Include="DataMapping\TaskRunMapping.cs" />
+    <Compile Include="DataMapping\TimeTableEntryMapping.cs" />
+    <Compile Include="DataMapping\TimeTablePurposeMapping.cs" />
+    <Compile Include="DataMapping\TimeTableTemplateEntryMapping.cs" />
+    <Compile Include="DataMapping\TimeTableTemplateMapping.cs" />
+    <Compile Include="EmailNotificationBll.cs" />
+    <Compile Include="EmployeeAlertBll.cs" />
+    <Compile Include="EmployeeBll.cs" />
+    <Compile Include="EmployeeGroupAlertBll.cs" />
+    <Compile Include="EmployeeGroupBll.cs" />
+    <Compile Include="CountryBll.cs" />
+    <Compile Include="AvatarBll.cs" />
+    <Compile Include="EmployeeSettingsBll.cs" />
+    <Compile Include="HolidayDefinitionBll.cs" />
+    <Compile Include="LoginLogBll.cs" />
+    <Compile Include="OvertimeEntryBll.cs" />
+    <Compile Include="RecurrenceBll.cs" />
+    <Compile Include="RecurrenceCore.cs" />
+    <Compile Include="TimeTableEntryBll.cs" />
+    <Compile Include="TimeTablePurposeBll.cs" />
+    <Compile Include="TimeTableTemplateBll.cs" />
+    <Compile Include="TimeTableTemplateEntryBll.cs" />
+    <Compile Include="ZipCodeBll.cs" />
+    <Compile Include="MessageBll.cs" />
+    <Compile Include="MessageFolderBll.cs" />
+    <Compile Include="MessageRecipientBll.cs" />
+    <Compile Include="MessageStorageBll.cs" />
+    <Compile Include="LogDeleteBll.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskBll.cs" />
+    <Compile Include="TaskDescriptionBll.cs" />
+    <Compile Include="TaskRecurrenceBll.cs" />
+    <Compile Include="TaskRunBll.cs" />
+    <Compile Include="UserBll.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SwmSuite.Data.Common\SwmSuite.Data.Common.csproj">
+      <Project>{E35CC450-D0C1-45C5-9BB0-2D1BE871CD98}</Project>
+      <Name>SwmSuite.Data.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWMSuite.DataAccess.Interface\SwmSuite.DataAccess.Interface.csproj">
+      <Project>{CBF925E3-63A1-4383-8F60-58796D9F7C31}</Project>
+      <Name>SwmSuite.DataAccess.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SwmSuite.Framework.BusinessObjects\SwmSuite.Data.BusinessObjects.csproj">
+      <Project>{D06DC017-74A1-4B63-82BC-7019B9C6333B}</Project>
+      <Name>SwmSuite.Data.BusinessObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SwmSuite.Framework.DataObjects\SwmSuite.Data.DataObjects.csproj">
+      <Project>{638BF0C2-5CD7-462B-AE9E-DEFAC3D18BCF}</Project>
+      <Name>SwmSuite.Data.DataObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWMSuite.Framework\SwmSuite.Framework.csproj">
+      <Project>{948A5F7B-C897-4A4D-8B0C-EE52B026B186}</Project>
+      <Name>SwmSuite.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

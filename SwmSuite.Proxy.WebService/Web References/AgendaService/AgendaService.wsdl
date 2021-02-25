@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="SimpleWorkfloorManagementSuiteNameSpace" xmlns:s1="SwmSuite_v1" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s2="http://microsoft.com/wsdl/types/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="SimpleWorkfloorManagementSuiteNameSpace" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="SimpleWorkfloorManagementSuiteNameSpace">
+      <s:import namespace="SwmSuite_v1" />
+      <s:element name="GetAgendasForEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employee" type="s1:Employee" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgendasForEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAgendasForEmployeeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="Agenda" nillable="true" type="s1:Agenda" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SwmSuiteSoapHeader" type="tns:SwmSuiteSoapHeader" />
+      <s:complexType name="SwmSuiteSoapHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Employee" type="s:int" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="CreateAgenda">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="agenda" type="s1:Agenda" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAgendaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateAgendaResult" type="s1:Agenda" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAgenda">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="agenda" type="s1:Agenda" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAgendaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateAgendaResult" type="s1:Agenda" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAgenda">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="agenda" type="s1:Agenda" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAgendaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAppointmentsOnDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employee" type="s1:Employee" />
+            <s:element minOccurs="1" maxOccurs="1" name="onDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAppointmentsOnDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAppointmentsOnDateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="Appointment" nillable="true" type="s1:Appointment" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGuestAppointmentsOnDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employee" type="s1:Employee" />
+            <s:element minOccurs="1" maxOccurs="1" name="onDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGuestAppointmentsOnDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGuestAppointmentsOnDateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="Appointment" nillable="true" type="s1:Appointment" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTimeTableAppointmentsOnDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employee" type="s1:Employee" />
+            <s:element minOccurs="1" maxOccurs="1" name="onDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTimeTableAppointmentsOnDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTimeTableAppointmentsOnDateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="unbounded" name="Appointment" nillable="true" type="s1:Appointment" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAppointment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appointment" type="s1:Appointment" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAppointmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateAppointmentResult" type="s1:Appointment" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAppointment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appointment" type="s1:Appointment" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAppointmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateAppointmentResult" type="s1:Appointment" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveAppointment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appointment" type="s1:Appointment" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveAppointmentResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="SwmSuite_v1">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:complexType name="Employee">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="UserSysId" type="s2:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s1:ZipCode" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrivatePhoneNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="WorkPhoneNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CellPhoneNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress3" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress4" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress5" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Avatar" type="s1:Avatar" />
+              <s:element minOccurs="0" maxOccurs="1" name="Settings" type="s1:EmployeeSettings" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Administrator" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BusinessObjectBase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SysId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowVersion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValidationErrors" type="s1:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Agenda">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OwnerEmployee" type="s1:Employee" />
+              <s:element minOccurs="1" maxOccurs="1" name="Visibility" type="s1:AppointmentVisibility" />
+              <s:element minOccurs="1" maxOccurs="1" name="ColorValue1" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="ColorValue2" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="ColorValue3" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Special" type="s1:SpecialAgenda" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="AppointmentVisibility">
+        <s:restriction base="s:string">
+          <s:enumeration value="Public" />
+          <s:enumeration value="Visible" />
+          <s:enumeration value="Private" />
+          <s:enumeration value="Invisible" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="SpecialAgenda">
+        <s:restriction base="s:string">
+          <s:enumeration value="NothingSpecial" />
+          <s:enumeration value="GuestAgenda" />
+          <s:enumeration value="TimeTableAgenda" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="EmployeeSettings">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="AutoLogon" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="AutoLogonHost" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="LogoutTimeout" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="EmailNotification" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SmtpServer" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="SmtpPort" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="SecureConnection" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="Authentication" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Avatar">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Picture" type="s:base64Binary" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ZipCode">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Appointment">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DateTimeStart" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="DateTimeEnd" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="Place" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OwnerEmployee" type="s1:Employee" />
+              <s:element minOccurs="0" maxOccurs="1" name="Contents" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Agenda" type="s1:Agenda" />
+              <s:element minOccurs="1" maxOccurs="1" name="Visibility" type="s1:AppointmentVisibility" />
+              <s:element minOccurs="0" maxOccurs="1" name="Guests">
+                <s:complexType>
+                  <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="unbounded" name="Employee" nillable="true" type="s1:Employee" />
+                  </s:sequence>
+                </s:complexType>
+              </s:element>
+              <s:element minOccurs="0" maxOccurs="1" name="Recurrence" type="s1:Recurrence" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Recurrence">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:BusinessObjectBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="RecurrenceMode" type="s1:RecurrenceMode" />
+              <s:element minOccurs="1" maxOccurs="1" name="Every" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="EveryWeekDay" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="Days" type="s1:DaySelection" />
+              <s:element minOccurs="1" maxOccurs="1" name="DayOfMonth" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Occurrence" type="s1:Occurrence" />
+              <s:element minOccurs="1" maxOccurs="1" name="Day" type="s1:Days" />
+              <s:element minOccurs="1" maxOccurs="1" name="Month" type="s1:Months" />
+              <s:element minOccurs="1" maxOccurs="1" name="Choice" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="EndMode" type="s1:RecurrenceEndMode" />
+              <s:element minOccurs="1" maxOccurs="1" name="Occurrences" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="RecurrenceMode">
+        <s:restriction base="s:string">
+          <s:enumeration value="Daily" />
+          <s:enumeration value="Weekly" />
+          <s:enumeration value="Monthly" />
+          <s:enumeration value="Yearly" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="DaySelection">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Monday" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tuesday" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Wednesday" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Thursday" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Friday" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Saturday" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Sunday" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Occurrence">
+        <s:restriction base="s:string">
+          <s:enumeration value="First" />
+          <s:enumeration value="Second" />
+          <s:enumeration value="Third" />
+          <s:enumeration value="Fourth" />
+          <s:enumeration value="Last" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="Days">
+        <s:restriction base="s:string">
+          <s:enumeration value="Monday" />
+          <s:enumeration value="Tuesday" />
+          <s:enumeration value="Wednesday" />
+          <s:enumeration value="Thursday" />
+          <s:enumeration value="Friday" />
+          <s:enumeration value="Saturday" />
+          <s:enumeration value="Sunday" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="Months">
+        <s:restriction base="s:string">
+          <s:enumeration value="January" />
+          <s:enumeration value="February" />
+          <s:enumeration value="March" />
+          <s:enumeration value="April" />
+          <s:enumeration value="May" />
+          <s:enumeration value="June" />
+          <s:enumeration value="July" />
+          <s:enumeration value="August" />
+          <s:enumeration value="September" />
+          <s:enumeration value="October" />
+          <s:enumeration value="November" />
+          <s:enumeration value="December" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="RecurrenceEndMode">
+        <s:restriction base="s:string">
+          <s:enumeration value="Infinite" />
+          <s:enumeration value="ByNumber" />
+          <s:enumeration value="ByDate" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAgendasForEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAgendasForEmployee" />
+  </wsdl:message>
+  <wsdl:message name="GetAgendasForEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAgendasForEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAgendasForEmployeeSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreateAgendaSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateAgenda" />
+  </wsdl:message>
+  <wsdl:message name="CreateAgendaSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateAgendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateAgendaSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAgendaSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAgenda" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAgendaSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAgendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAgendaSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAgendaSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAgenda" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAgendaSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAgendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAgendaSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentsOnDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAppointmentsOnDate" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentsOnDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAppointmentsOnDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAppointmentsOnDateSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetGuestAppointmentsOnDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGuestAppointmentsOnDate" />
+  </wsdl:message>
+  <wsdl:message name="GetGuestAppointmentsOnDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGuestAppointmentsOnDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGuestAppointmentsOnDateSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeTableAppointmentsOnDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTimeTableAppointmentsOnDate" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeTableAppointmentsOnDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTimeTableAppointmentsOnDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeTableAppointmentsOnDateSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreateAppointmentSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateAppointment" />
+  </wsdl:message>
+  <wsdl:message name="CreateAppointmentSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateAppointmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateAppointmentSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAppointmentSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAppointment" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAppointmentSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAppointmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAppointmentSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="RemoveAppointmentSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveAppointment" />
+  </wsdl:message>
+  <wsdl:message name="RemoveAppointmentSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveAppointmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveAppointmentSwmSuiteSoapHeader">
+    <wsdl:part name="SwmSuiteSoapHeader" element="tns:SwmSuiteSoapHeader" />
+  </wsdl:message>
+  <wsdl:portType name="AgendaServiceSoap">
+    <wsdl:operation name="GetAgendasForEmployee">
+      <wsdl:input message="tns:GetAgendasForEmployeeSoapIn" />
+      <wsdl:output message="tns:GetAgendasForEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAgenda">
+      <wsdl:input message="tns:CreateAgendaSoapIn" />
+      <wsdl:output message="tns:CreateAgendaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAgenda">
+      <wsdl:input message="tns:UpdateAgendaSoapIn" />
+      <wsdl:output message="tns:UpdateAgendaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAgenda">
+      <wsdl:input message="tns:DeleteAgendaSoapIn" />
+      <wsdl:output message="tns:DeleteAgendaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentsOnDate">
+      <wsdl:input message="tns:GetAppointmentsOnDateSoapIn" />
+      <wsdl:output message="tns:GetAppointmentsOnDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestAppointmentsOnDate">
+      <wsdl:input message="tns:GetGuestAppointmentsOnDateSoapIn" />
+      <wsdl:output message="tns:GetGuestAppointmentsOnDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeTableAppointmentsOnDate">
+      <wsdl:input message="tns:GetTimeTableAppointmentsOnDateSoapIn" />
+      <wsdl:output message="tns:GetTimeTableAppointmentsOnDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAppointment">
+      <wsdl:input message="tns:CreateAppointmentSoapIn" />
+      <wsdl:output message="tns:CreateAppointmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAppointment">
+      <wsdl:input message="tns:UpdateAppointmentSoapIn" />
+      <wsdl:output message="tns:UpdateAppointmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAppointment">
+      <wsdl:input message="tns:RemoveAppointmentSoapIn" />
+      <wsdl:output message="tns:RemoveAppointmentSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AgendaServiceSoap" type="tns:AgendaServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAgendasForEmployee">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetAgendasForEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAgendasForEmployeeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAgenda">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CreateAgenda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateAgendaSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAgenda">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateAgenda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateAgendaSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAgenda">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/DeleteAgenda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteAgendaSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentsOnDate">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetAppointmentsOnDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAppointmentsOnDateSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestAppointmentsOnDate">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetGuestAppointmentsOnDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetGuestAppointmentsOnDateSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeTableAppointmentsOnDate">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetTimeTableAppointmentsOnDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTimeTableAppointmentsOnDateSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAppointment">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CreateAppointment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateAppointmentSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAppointment">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateAppointment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateAppointmentSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAppointment">
+      <soap:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/RemoveAppointment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RemoveAppointmentSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AgendaServiceSoap12" type="tns:AgendaServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAgendasForEmployee">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetAgendasForEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAgendasForEmployeeSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAgenda">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CreateAgenda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateAgendaSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAgenda">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateAgenda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateAgendaSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAgenda">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/DeleteAgenda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteAgendaSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentsOnDate">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetAppointmentsOnDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAppointmentsOnDateSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestAppointmentsOnDate">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetGuestAppointmentsOnDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetGuestAppointmentsOnDateSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeTableAppointmentsOnDate">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/GetTimeTableAppointmentsOnDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTimeTableAppointmentsOnDateSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAppointment">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/CreateAppointment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateAppointmentSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAppointment">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/UpdateAppointment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateAppointmentSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAppointment">
+      <soap12:operation soapAction="SimpleWorkfloorManagementSuiteNameSpace/RemoveAppointment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RemoveAppointmentSwmSuiteSoapHeader" part="SwmSuiteSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AgendaService">
+    <wsdl:port name="AgendaServiceSoap" binding="tns:AgendaServiceSoap">
+      <soap:address location="http://localhost/SWMSuite.Facade.WebService/AgendaService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AgendaServiceSoap12" binding="tns:AgendaServiceSoap12">
+      <soap12:address location="http://localhost/SWMSuite.Facade.WebService/AgendaService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
